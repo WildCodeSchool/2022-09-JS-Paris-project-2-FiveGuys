@@ -1,13 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-function Header({ currentPage, setCurrentPage }) {
-  // static defaultProps = {
-  //     currentPage: 0
-  //   }
-  function handleClickHeader(page) {
-    setCurrentPage(page);
-  }
+function Header({ currentPage, handleMenuItem }) {
   return (
     <div className="header">
       <div className="header-title">
@@ -16,17 +9,17 @@ function Header({ currentPage, setCurrentPage }) {
       <div>
         <ul className="header</div>-list">
           <li className={currentPage === "news" ? "active" : ""}>
-            <button type="button" onClick={() => handleClickHeader("news")}>
+            <button type="button" onClick={() => handleMenuItem("news")}>
               News
             </button>
           </li>
           <li className={currentPage === "contact" ? "active" : ""}>
-            <button type="button" onClick={() => handleClickHeader("contact")}>
+            <button type="button" onClick={() => handleMenuItem("contact")}>
               Contact
             </button>
           </li>
           <li className={currentPage === "about" ? "active" : ""}>
-            <button type="button" onClick={() => handleClickHeader("about")}>
+            <button type="button" onClick={() => handleMenuItem("about")}>
               About Us
             </button>
           </li>
@@ -36,8 +29,4 @@ function Header({ currentPage, setCurrentPage }) {
   );
 }
 
-Header.propTypes = {
-  currentPage: PropTypes.string,
-  setCurrentPage: PropTypes.func,
-};
 export default Header;

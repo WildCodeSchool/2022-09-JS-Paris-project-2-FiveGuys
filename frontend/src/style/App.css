@@ -73,3 +73,10 @@ ul {
 .active {
   color: var(--primary-color);
 }
+
+/* --------- MAP --------- */
+#map {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 240, 242);
+}
