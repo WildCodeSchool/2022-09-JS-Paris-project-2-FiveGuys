@@ -8,13 +8,11 @@
   src: url("./fonts/ubuntu.ttf") format("truetype");
 }
 
-
-
 :root {
-  --dark-color: #4A4E4E;
-  --light-color: #FFF7EB;
-  --primary-color: #FFE300;
-  --secondary-color: #B2B2B2;
+  --dark-color: #4a4e4e;
+  --light-color: #fff7eb;
+  --primary-color: #ffe300;
+  --secondary-color: #b2b2b2;
 
   --title-font: DeathStar, Arial, sans-serif;
   --text-font: Ubuntu, Arial, sans-serif;
@@ -60,4 +58,18 @@ div {
   box-shadow: var(--box-shadow);
   border: 1px solid black;
   border-radius: var(--border-radius);
+}
+
+/* --------- HEADER --------- */
+
+.header {
+  display: flex;
+}
+
+ul {
+  display: flex;
+}
+
+.active {
+  color: var(--primary-color);
 }
