@@ -1,4 +1,5 @@
 import "./style/App.css";
+import "./style/StarBackground.css";
 import React, { useState, useEffect } from "react";
 import planets from "./services/planetData";
 import fetchData from "./services/Fetch";
@@ -44,15 +45,19 @@ function App() {
 
   return (
     <div>
-      <Header currentPage={currentPage} handleMenuItem={handleMenuItem} />
-      <Map
-        currentPlanet={currentPlanet}
-        currentPage={currentPage}
-        updatePlanet={updatePlanet}
-        handleMenuItem={handleMenuItem}
-        reset={reset}
-      />
-      <Footer />
+      <div className="stars" />
+      <div className="twinkling" />
+      <div className="others">
+        <Header currentPage={currentPage} handleMenuItem={handleMenuItem} />
+        <Map
+          currentPlanet={currentPlanet}
+          currentPage={currentPage}
+          updatePlanet={updatePlanet}
+          handleMenuItem={handleMenuItem}
+          reset={reset}
+        />
+        <Footer />
+      </div>
     </div>
   );
 }

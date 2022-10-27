@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/StarBackground.css";
 
 function Map({ currentPage, currentPlanet, updatePlanet, reset }) {
   return (
