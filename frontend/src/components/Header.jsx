@@ -1,13 +1,11 @@
 import React from "react";
+import "../style/Header.css";
 
 function Header({ currentPage, handleMenuItem }) {
   return (
     <div className="header">
-      <div className="header-title">
-        <h1>Meteo Wars</h1>
-      </div>
-      <div>
-        <ul className="header</div>-list">
+      <div className="header-list">
+        <ul>
           <li className={currentPage === "news" ? "active" : ""}>
             <button type="button" onClick={() => handleMenuItem("news")}>
               News
@@ -25,6 +23,7 @@ function Header({ currentPage, handleMenuItem }) {
           </li>
         </ul>
       </div>
+      <div className="header-title">Meteo Wars</div>
     </div>
   );
 }
