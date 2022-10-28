@@ -35,19 +35,29 @@ ul {
   justify-content: space-evenly;
 }
 
-li {
-  justify-content: space-between;
+.header-item {
+  justify-content: space-evenly;
 }
 
-button {
+.header-button {
   color: var(--light-color);
   border: none;
   background: none;
   font-family: var(--text-font);
   font-weight: 600;
   cursor: pointer;
+  padding: 5px 15px 5px 15px;
+}
+
+.header-button:hover {
+  color: var(--dark-color);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 5px 15px 5px 15px;
 }
 
 .active {
-  color: var(--primary-color);
+  color: var(--dark-color);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
 }
