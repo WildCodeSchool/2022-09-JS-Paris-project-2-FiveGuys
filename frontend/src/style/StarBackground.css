@@ -12,15 +12,6 @@
   }
 }
 
-@keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
 .others {
   position: absolute;
   z-index: 3;
@@ -28,8 +19,7 @@
 }
 
 .stars,
-.twinkling,
-.clouds {
+.twinkling {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,12 +31,12 @@
 }
 
 .stars {
-  background: #000 url(..\style\stars.png) repeat top center;
+  background: #000 url(..\style\assets\stars.png) repeat top center;
   z-index: 0;
 }
 
 .twinkling {
-  background: transparent url(..\style\twinkling.png) repeat top center;
+  background: transparent url(..\style\assets\twinkling.png) repeat top center;
   z-index: 1;
   animation: move-twink-back 500s linear infinite;
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import Planet from "../components/Planet";
+import planets from "../services/planetData";
 import "../style/StarBackground.css";
 
 function Map({ currentPage, currentPlanet, updatePlanet, reset }) {
@@ -45,6 +47,18 @@ function Map({ currentPage, currentPlanet, updatePlanet, reset }) {
           </button>
         </div>
       )}
+      {Object.entries(planets).map(([key, value]) => {
+        return (
+          <Planet
+            key={key}
+            pic={value.picture}
+            size={value.size}
+            name={key}
+            bgsize={value.bgsize}
+            position={value.position}
+          />
+        );
+      })}
     </div>
   );
 }
