@@ -24,10 +24,9 @@ function Planet({ size, name, pic, bgsize, position }) {
         content={
           <div className="planet-tooltip">
             <h1 className="tooltip-title">{name}</h1>
-
-            <img className="raincloud" src={icon} alt="icon" />
-
             <h2 className="tooltip-degree"> 35° </h2>
+            <h2 className="tooltip-hour"> 2:00 PM </h2>
+            <img className="raincloud" src={icon} alt="icon" />
           </div>
         }
         placement="bottom"
