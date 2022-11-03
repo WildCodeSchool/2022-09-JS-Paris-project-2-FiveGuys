@@ -18,7 +18,7 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
   }; */
 
   const elem = (
-    <div className="planet-container" style={containerPosition}>
+    <div className="planet-container">
       <Tippy
         arrow={false}
         content={
