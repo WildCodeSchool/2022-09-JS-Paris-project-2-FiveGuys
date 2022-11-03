@@ -10,7 +10,7 @@ const planets = {
     long: 22.5384,
     lat: 5.6979,
     picture: tatooinePic,
-    size: 5,
+    size: 6,
     bgsize: 120,
     position: {
       top: 10,
@@ -21,7 +21,7 @@ const planets = {
     long: 47.5694,
     lat: 0.3443,
     picture: nabooPic,
-    size: 5,
+    size: 6,
     bgsize: 150,
     position: {
       top: 10,
@@ -32,7 +32,7 @@ const planets = {
     long: 22.5384,
     lat: 5.6979,
     picture: coruscantPic,
-    size: 5,
+    size: 6,
     bgsize: 130,
     position: {
       top: 10,
@@ -43,7 +43,7 @@ const planets = {
     long: 22.5384,
     lat: 5.6979,
     picture: kashyyykPic,
-    size: 5,
+    size: 6,
     bgsize: 170,
     position: {
       top: 10,
@@ -65,8 +65,8 @@ const planets = {
     long: 22.5384,
     lat: 5.6979,
     picture: deathStarPic,
-    size: 1,
-    bgsize: 140,
+    size: 4,
+    bgsize: 150,
     position: {
       top: 10,
       left: 60,

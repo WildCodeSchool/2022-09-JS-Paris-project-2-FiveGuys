@@ -4,7 +4,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import icon from "../style/assets/raincloud.png";
 
-function Planet({ size, name, pic, bgsize, position }) {
+function Planet({ size, name, pic, bgsize /* position */ }) {
   const planetStyle = {
     backgroundImage: `url("${pic}")`,
     width: `${size}rem`,
@@ -12,10 +12,10 @@ function Planet({ size, name, pic, bgsize, position }) {
     backgroundSize: `${bgsize}%`,
   };
 
-  const containerPosition = {
+  /* const containerPosition = {
     marginTop: `${position.top}%`,
     marginLeft: `${position.left}%`,
-  };
+  }; */
 
   const elem = (
     <div className="planet-container" style={containerPosition}>
