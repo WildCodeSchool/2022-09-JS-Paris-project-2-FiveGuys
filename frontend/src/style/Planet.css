@@ -19,3 +19,14 @@
   text-align: center;
   color: var(--light-color);
 }
+
+.tooltip-title {
+  font-family: var(--title-font);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--light-color);
+}
+
+.raincloud {
+  width: 30px;
+}
