@@ -1,0 +1,21 @@
+.planet-button {
+  border-radius: 50%;
+  background-position: center;
+  border: none;
+  transition: all 0.5;
+}
+
+.planet-button:hover {
+  box-shadow: 4px -1px 14px 5px #ffffff;
+}
+
+/* .planet-container {
+  width: auto;
+  position: absolute;
+  text-align: center;
+} */
+
+.planet-name {
+  text-align: center;
+  color: var(--light-color);
+}

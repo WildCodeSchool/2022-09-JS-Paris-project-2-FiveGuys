@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "DeathStar";
+  src: url("./fonts/DeathStar.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/Ubuntu.ttf") format("truetype");
+}
+
+:root {
+  --dark-color: #4a4e4e;
+  --light-color: #fff7eb;
+  --primary-color: #ffe300;
+  --secondary-color: #b2b2b2;
+
+  --title-font: DeathStar, Arial, sans-serif;
+  --text-font: Ubuntu, Arial, sans-serif;
+
+  --border-radius: 15px;
+  --box-shadow: var(--light-color) 0px 2px 6px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--text-font);
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card {
+  box-shadow: var(--box-shadow);
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+}
+
+/* --------- MAP --------- */
+#map {
+  width: 100vw;
+  height: calc(100vh - 6rem);
+}
