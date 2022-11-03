@@ -12,13 +12,3 @@ function Footer() {
   );
 }
 export default Footer;
-
-// export function Footer()
-//   return <>
-//     <footer>
-//       <img src="../components/Logo.png" alt="Logo" />
-//     </footer>
-//     </>
-
-//   ;
-// }
