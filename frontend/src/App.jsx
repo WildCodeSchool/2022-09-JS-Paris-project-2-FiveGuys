@@ -1,9 +1,9 @@
 import "./style/App.css";
 import "./style/StarBackground.css";
 import React, { useState } from "react";
-/* import planets from "./services/planetData";
-import fetchData from "./services/Fetch"; */
 import { Route, Routes } from "react-router-dom";
+import planets from "./services/planetData";
+/* import fetchData from "./services/Fetch"; */
 import Map from "./pages/Map";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,8 +13,7 @@ import News from "./components/News";
 import Contact from "./components/Contact";
 
 function App() {
-  const [currentPlanet, setCurrentPlanet] = useState(false);
-  console.warn(setCurrentPlanet);
+  const [planetData, setPlanetData] = useState(planets);
 
   /*   useEffect(() => {
     if (currentPlanet.name) {
@@ -32,9 +31,17 @@ function App() {
           <Route path="aboutUs" element={<AboutUs />} />
           <Route path="news" element={<News />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="planets/:planet" element={<PlanetCard />} />
+          <Route
+            path="planets/:planet"
+            element={
+              <PlanetCard
+                planetData={planetData}
+                setPlanetData={setPlanetData}
+              />
+            }
+          />
         </Routes>
-        <Map currentPlanet={currentPlanet} />
+        <Map />
         <Footer />
       </div>
     </div>

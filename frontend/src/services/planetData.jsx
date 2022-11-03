@@ -46,7 +46,7 @@ const planets = {
     lat: 5.6979,
     picture: deathStarPic,
     size: 4,
-    bgsize: 150,
+    bgsize: 155,
   },
 };
 
