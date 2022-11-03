@@ -20,13 +20,20 @@
   color: var(--light-color);
 }
 
-.tooltip-title {
-  font-family: var(--title-font);
-  font-size: 1rem;
-  letter-spacing: 1px;
-  color: var(--light-color);
-}
-
 .raincloud {
   width: 50px;
+}
+
+.popup-title {
+  font-family: var(--title-font);
+}
+
+.planet-popup {
+  background-color: red;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  border-color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }

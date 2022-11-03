@@ -1,8 +1,9 @@
 import React from "react";
-import "../style/Planet.css";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
 import icon from "../style/assets/raincloud.png";
+import "../style/Planet.css";
+import "@mui/material/styles";
 
 function Planet({ size, name, pic, bgsize /* position */ }) {
   const planetStyle = {
@@ -17,24 +18,58 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
     marginLeft: `${position.left}%`,
   }; */
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMouseEnter = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMouseLeave = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "planet-popover" : undefined;
+
   const elem = (
     <div className="planet-container">
-      <Tippy
-        arrow={false}
-        content={
-          <div className="planet-tooltip">
-            <h1 className="tooltip-title">{name}</h1>
-            <h2 className="tooltip-degree"> 35° </h2>
-            <h2 className="tooltip-hour"> 2:00 PM </h2>
-            <img className="raincloud" src={icon} alt="icon" />
-          </div>
-        }
-        placement="bottom"
+      <button
+        type="button"
+        className="planet-button"
+        style={planetStyle}
+        aria-describedby={id}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        aria-haspopup="true"
+        backdrop="invisible"
       >
-        <button type="button" className="planet-button" style={planetStyle}>
+        <Popover
+          id={id}
+          sx={{
+            pointerEvents: "auto",
+          }}
+          open={open}
+          anchorEl={anchorEl}
+          onMouseLeave={handleMouseLeave}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          disableRestoreFocus
+        >
           {" "}
-        </button>
-      </Tippy>
+          <Typography className="planet-popup">
+            <h2 className="popup-title">{name}</h2>
+            <p className="popup-hour">2:00 am</p>
+            <img src={icon} alt="icon" width="50px" />
+            <p className="popup-temperature">27°</p>
+          </Typography>
+        </Popover>
+      </button>
     </div>
   );
   return elem;
