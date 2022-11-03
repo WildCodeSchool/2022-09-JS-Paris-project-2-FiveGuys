@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/Planet.css";
 
-function Planet({ size, name, pic, bgsize, position }) {
+function Planet({ size, name, pic, bgsize /* position */ }) {
   const planetStyle = {
     backgroundImage: `url("${pic}")`,
     width: `${size}rem`,
@@ -9,13 +9,13 @@ function Planet({ size, name, pic, bgsize, position }) {
     backgroundSize: `${bgsize}%`,
   };
 
-  const containerPosition = {
+  /* const containerPosition = {
     marginTop: `${position.top}%`,
     marginLeft: `${position.left}%`,
-  };
+  }; */
 
   const elem = (
-    <div className="planet-container" style={containerPosition}>
+    <div className="planet-container" /* style={containerPosition} */>
       <button type="button" className="planet-button" style={planetStyle}>
         {" "}
       </button>
