@@ -13,3 +13,25 @@
   width: 50%;
   height: 100%;
 }
+
+.temperature-and-hour {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  padding: 1.8rem;
+  font-size: 1.3rem;
+}
+
+.temperature-and-hour div {
+  justify-content: space-around;
+  width: 50%;
+}
+
+.weather-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-icon img {
+  width: 30%;
+}
