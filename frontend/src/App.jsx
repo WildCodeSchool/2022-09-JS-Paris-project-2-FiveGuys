@@ -1,61 +1,47 @@
 import "./style/App.css";
 import "./style/StarBackground.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import planets from "./services/planetData";
-import fetchData from "./services/Fetch";
+/* import fetchData from "./services/Fetch"; */
 import Map from "./pages/Map";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PlanetCard from "./components/PlanetCard";
+import AboutUs from "./components/AboutUs";
+import News from "./components/News";
+import Contact from "./components/Contact";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("");
-  const [currentPlanet, setCurrentPlanet] = useState({
-    name: "",
-    coords: {
-      lat: 0,
-      long: 0,
-    },
-  });
-  const handleMenuItem = (item) => {
-    setCurrentPlanet("");
-    setCurrentPage(item);
-  };
-  const updatePlanet = (planet) => {
-    setCurrentPage("");
-    setCurrentPlanet({
-      name: planet,
-      coords: {
-        lat: planets[planet].lat,
-        long: planets[planet].long,
-      },
-    });
-  };
+  const [planetData, setPlanetData] = useState(planets);
 
-  const reset = () => {
-    setCurrentPage("");
-    setCurrentPlanet("");
-  };
-
-  useEffect(() => {
+  /*   useEffect(() => {
     if (currentPlanet.name) {
       fetchData(currentPlanet.coords).then((data) => console.error(data));
     }
-  }, [currentPlanet.name]);
-
+  }, [currentPlanet]);
+ */
   return (
     <div>
       <div className="stars" />
       <div className="twinkling" />
       <div className="others">
-        <Header currentPage={currentPage} handleMenuItem={handleMenuItem} />
-        <Map
-          currentPlanet={currentPlanet}
-          currentPage={currentPage}
-          updatePlanet={updatePlanet}
-          handleMenuItem={handleMenuItem}
-          reset={reset}
-        />
+        <Header />
+        <Routes>
+          <Route path="aboutUs" element={<AboutUs />} />
+          <Route path="news" element={<News />} />
+          <Route path="contact" element={<Contact />} />
+          <Route
+            path="planets/:planet"
+            element={
+              <PlanetCard
+                planetData={planetData}
+                setPlanetData={setPlanetData}
+              />
+            }
+          />
+        </Routes>
+        <Map />
         <Footer />
       </div>
     </div>

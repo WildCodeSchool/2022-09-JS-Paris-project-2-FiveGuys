@@ -13,9 +13,8 @@ function Map() {
             key={key}
             pic={value.picture}
             size={value.size * 1.5}
-            /* name={key} */
+            name={key}
             bgsize={value.bgsize}
-            position={value.position}
           />
         );
       })}

@@ -1,7 +1,8 @@
 import React from "react";
 import "../style/Planet.css";
+import { Link } from "react-router-dom";
 
-function Planet({ size, name, pic, bgsize /* position */ }) {
+function Planet({ size, name, pic, bgsize }) {
   const planetStyle = {
     backgroundImage: `url("${pic}")`,
     width: `${size}rem`,
@@ -9,17 +10,13 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
     backgroundSize: `${bgsize}%`,
   };
 
-  /* const containerPosition = {
-    marginTop: `${position.top}%`,
-    marginLeft: `${position.left}%`,
-  }; */
-
   const elem = (
-    <div className="planet-container" /* style={containerPosition} */>
-      <button type="button" className="planet-button" style={planetStyle}>
-        {" "}
-      </button>
-      <div className="planet-name">{name}</div>
+    <div className="planet-container">
+      <Link to={`planets/${name}`}>
+        <button type="button" className="planet-button" style={planetStyle}>
+          {" "}
+        </button>
+      </Link>
     </div>
   );
   return elem;

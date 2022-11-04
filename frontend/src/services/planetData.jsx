@@ -12,10 +12,6 @@ const planets = {
     picture: tatooinePic,
     size: 6,
     bgsize: 120,
-    position: {
-      top: 10,
-      left: 10,
-    },
   },
   Naboo: {
     long: 47.5694,
@@ -23,10 +19,6 @@ const planets = {
     picture: nabooPic,
     size: 6,
     bgsize: 150,
-    position: {
-      top: 10,
-      left: 20,
-    },
   },
   Coruscant: {
     long: 22.5384,
@@ -34,10 +26,6 @@ const planets = {
     picture: coruscantPic,
     size: 6,
     bgsize: 130,
-    position: {
-      top: 10,
-      left: 30,
-    },
   },
   Kashyyyk: {
     long: 22.5384,
@@ -45,10 +33,6 @@ const planets = {
     picture: kashyyykPic,
     size: 6,
     bgsize: 170,
-    position: {
-      top: 10,
-      left: 40,
-    },
   },
   Hoth: {
     long: 90.0,
@@ -56,21 +40,13 @@ const planets = {
     picture: hothPic,
     size: 3,
     bgsize: 140,
-    position: {
-      top: 10,
-      left: 50,
-    },
   },
   Death_Star: {
     long: 22.5384,
     lat: 5.6979,
     picture: deathStarPic,
     size: 4,
-    bgsize: 150,
-    position: {
-      top: 10,
-      left: 60,
-    },
+    bgsize: 155,
   },
 };
 
