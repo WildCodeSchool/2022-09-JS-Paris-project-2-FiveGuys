@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Page.css";
+import "./Page.css";
 
 function Page() {
   return <div className="page">pages</div>;

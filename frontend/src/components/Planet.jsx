@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Planet.css";
+import "./Planet.css";
 import { Link } from "react-router-dom";
 
 function Planet({ size, name, pic, bgsize }) {
@@ -10,16 +10,13 @@ function Planet({ size, name, pic, bgsize }) {
     backgroundSize: `${bgsize}%`,
   };
 
-  const elem = (
+  return (
     <div className="planet-container">
       <Link to={`planets/${name}`}>
-        <button type="button" className="planet-button" style={planetStyle}>
-          {" "}
-        </button>
+        <div className="planet-button" style={planetStyle} />
       </Link>
     </div>
   );
-  return elem;
 }
 
 export default Planet;

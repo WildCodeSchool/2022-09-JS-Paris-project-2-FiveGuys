@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Header.css";
+import "./Header.css";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -19,8 +19,7 @@ function Header() {
         </ul>
       </div>
       <div className="header-title">
-        {" "}
-        <Link to="/"> Meteo Wars</Link>{" "}
+        <Link to="/"> Meteo Wars</Link>
       </div>
     </div>
   );

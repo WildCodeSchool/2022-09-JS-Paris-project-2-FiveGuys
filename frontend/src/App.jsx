@@ -1,7 +1,7 @@
-import "./style/App.css";
-import "./style/StarBackground.css";
+import "./App.css";
+import "./pages/StarBackground.css";
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import planets from "./services/planetData";
 /* import fetchData from "./services/Fetch"; */
 import Map from "./pages/Map";
@@ -26,23 +26,25 @@ function App() {
       <div className="stars" />
       <div className="twinkling" />
       <div className="others">
-        <Header />
-        <Routes>
-          <Route path="aboutUs" element={<AboutUs />} />
-          <Route path="news" element={<News />} />
-          <Route path="contact" element={<Contact />} />
-          <Route
-            path="planets/:planet"
-            element={
-              <PlanetCard
-                planetData={planetData}
-                setPlanetData={setPlanetData}
-              />
-            }
-          />
-        </Routes>
-        <Map />
-        <Footer />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="aboutUs" element={<AboutUs />} />
+            <Route path="news" element={<News />} />
+            <Route path="contact" element={<Contact />} />
+            <Route
+              path="planets/:planet"
+              element={
+                <PlanetCard
+                  planetData={planetData}
+                  setPlanetData={setPlanetData}
+                />
+              }
+            />
+          </Routes>
+          <Map />
+          <Footer />
+        </BrowserRouter>
       </div>
     </div>
   );

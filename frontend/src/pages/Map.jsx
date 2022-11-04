@@ -1,8 +1,8 @@
 import React from "react";
 import Planet from "../components/Planet";
 import planets from "../services/planetData";
-import "../style/StarBackground.css";
-import "../style/map.css";
+import "./StarBackground.css";
+import "./Map.css";
 
 function Map() {
   return (
