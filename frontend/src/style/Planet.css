@@ -33,7 +33,11 @@
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   border-color: var(--primary-color);
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.MuiPaper-root {
+  background-color: blue;
 }

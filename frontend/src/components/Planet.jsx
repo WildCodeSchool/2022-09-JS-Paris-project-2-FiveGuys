@@ -3,7 +3,8 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import icon from "../style/assets/raincloud.png";
 import "../style/Planet.css";
-import "@mui/material/styles";
+
+import ThemeProvider from "@material-ui/styles";
 
 function Planet({ size, name, pic, bgsize /* position */ }) {
   const planetStyle = {
@@ -18,6 +19,21 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
     marginLeft: `${position.left}%`,
   }; */
 
+  const theme = createTheme({
+    components: {
+      // Name of the component
+      MuiPaperRoot: {
+        styleOverrides: {
+          // Name of the slot
+          root: {
+            // Some CSS
+            backgroundColor: "blue",
+          },
+        },
+      },
+    },
+  });
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMouseEnter = (event) => {
@@ -31,6 +47,8 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
   const open = Boolean(anchorEl);
   const id = open ? "planet-popover" : undefined;
 
+  // const classes = useStyles();
+
   const elem = (
     <div className="planet-container">
       <button
@@ -41,34 +59,36 @@ function Planet({ size, name, pic, bgsize /* position */ }) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         aria-haspopup="true"
-        backdrop="invisible"
       >
-        <Popover
-          id={id}
-          sx={{
-            pointerEvents: "auto",
-          }}
-          open={open}
-          anchorEl={anchorEl}
-          onMouseLeave={handleMouseLeave}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
-          disableRestoreFocus
-        >
-          {" "}
-          <Typography className="planet-popup">
-            <h2 className="popup-title">{name}</h2>
-            <p className="popup-hour">2:00 am</p>
-            <img src={icon} alt="icon" width="50px" />
-            <p className="popup-temperature">27°</p>
-          </Typography>
-        </Popover>
+        <ThemeProvider theme={theme}>
+          <Popover
+            backdrop="invisible"
+            id={id}
+            sx={{
+              pointerEvents: "auto",
+            }}
+            open={open}
+            anchorEl={anchorEl}
+            onMouseLeave={handleMouseLeave}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            disableRestoreFocus
+          >
+            {" "}
+            <Typography className="planet-popup">
+              <h2 className="popup-title">{name}</h2>
+              <p className="popup-hour">2:00 am</p>
+              <img src={icon} alt="icon" width="50px" />
+              <p className="popup-temperature">27°</p>
+            </Typography>
+          </Popover>
+        </ThemeProvider>
       </button>
     </div>
   );
