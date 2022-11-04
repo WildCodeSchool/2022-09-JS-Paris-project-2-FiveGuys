@@ -8,6 +8,18 @@ function fetchData(lat, long) {
     .then((res) => res.data);
 }
 
+// function fetchData(lat, long) {
+//   return axios
+//     .get("https://api.open-meteo.com/v1/forecast/get", {
+//       params: {
+//         latitude: lat,
+//         longitude: long,
+//         daily: ["weathercode", "temperature_2m_max"],
+//       },
+//     })
+//     .then((res) => res.data);
+// }
+
 /// https://api.open-meteo.com/v1/forecast?latitude=${data.lat}&longitude=${data.long}&daily=weathercode&timezone=Europe%2FBerlin
 
 export default fetchData;
