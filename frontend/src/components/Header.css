@@ -8,6 +8,7 @@
 }
 
 .header {
+  background-color: red;
   align-items: center;
   text-align: center;
   width: 100vw;
@@ -24,6 +25,10 @@
   font-size: 2rem;
   display: flex;
   justify-content: center;
+}
+.header-title a {
+  text-decoration: none;
+  color: var(--light-color);
 }
 
 ul {
@@ -45,7 +50,8 @@ ul {
   border-radius: var(--border-radius);
 }
 
-.header-button {
+ul a {
+  text-decoration: none;
   color: var(--light-color);
   border: none;
   background: none;
@@ -55,7 +61,8 @@ ul {
   padding: 5px 15px 5px 15px;
 }
 
-.header-button:hover {
+ul a:hover {
+  color: var(--dark-color);
   background-color: var(--primary-color);
   border-radius: var(--border-radius);
   padding: 5px 15px 5px 15px;

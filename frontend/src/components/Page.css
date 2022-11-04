@@ -1,0 +1,14 @@
+.page {
+  position: absolute;
+  background-color: yellow;
+  height: 80vh;
+  width: 85vw;
+  margin: 4vh 0 10vw 7.5vw;
+}
+
+.page-title {
+  width: 100%;
+  font-size: 3rem;
+  background-color: lightskyblue;
+  text-align: center;
+}

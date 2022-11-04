@@ -1,0 +1,15 @@
+.planet-card {
+  display: flex;
+}
+
+.planet-card-left {
+  background-color: lightgreen;
+  width: 50%;
+  height: 100%;
+}
+
+.planet-card-right {
+  background-color: lightcoral;
+  width: 50%;
+  height: 100%;
+}

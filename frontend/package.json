@@ -16,7 +16,8 @@
     "react-dom": "^18.0.0",
     "template-fullstack": "file:..",
     "@mui/material": "^5.10.12",
-    "@material-ui/styles": "^4.11.5"
+    "@material-ui/styles": "^4.11.5",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

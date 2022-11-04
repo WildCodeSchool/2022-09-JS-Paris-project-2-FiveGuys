@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../style/assets/Logo.png";
-import "../style/Footer.css";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -12,13 +12,3 @@ function Footer() {
   );
 }
 export default Footer;
-
-// export function Footer()
-//   return <>
-//     <footer>
-//       <img src="../components/Logo.png" alt="Logo" />
-//     </footer>
-//     </>
-
-//   ;
-// }
