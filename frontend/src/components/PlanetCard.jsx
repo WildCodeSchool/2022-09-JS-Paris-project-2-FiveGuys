@@ -5,7 +5,10 @@ import fetchData from "../services/Fetch";
 import "./PlanetCard.css";
 import Title from "./Title";
 import Calendar from "./Calendar";
-import sun from "../style/assets/0.png";
+import rain from "../style/assets/rain.png";
+import windDirection from "../style/assets/wind-direction.png";
+import wind from "../style/assets/wind.png";
+import uv from "../style/assets/uv.png";
 
 function PlanetCard({ planetData, setPlanetData }) {
   const current = new Date();
@@ -37,11 +40,7 @@ function PlanetCard({ planetData, setPlanetData }) {
           <>
             <div className="temperature-and-hour">
               <div>
-                {
-                  planetData[planet].globalWeather.daily.temperature_2m_max[
-                    currentDay
-                  ]
-                }
+                {`${planetData[planet].globalWeather.daily.temperature_2m_max[currentDay]}°`}
               </div>
               <div>
                 {current.getHours() + planetData[planet].timezone}H
@@ -49,7 +48,33 @@ function PlanetCard({ planetData, setPlanetData }) {
               </div>
             </div>
             <div className="weather-icon">
-              <img src={sun} alt="sun" />
+              <img
+                src={
+                  new URL(
+                    `../../public/meteo-icon/${planetData[planet].globalWeather.daily.weathercode[currentDay]}.png`,
+                    import.meta.url
+                  ).href
+                }
+                alt="sun"
+              />
+            </div>
+            <div className="weather-spec-icon">
+              <img src={rain} alt="rain" />
+              <img src={windDirection} alt="Wind Direction" />
+              <img src={wind} alt="wind" />
+              <img src={uv} alt="UV" />
+            </div>
+            <div className="weather-spec-data">
+              <p>
+                {`${planetData[planet].globalWeather.daily.precipitation_sum[currentDay]}mm`}
+              </p>
+              <p>
+                {`${planetData[planet].globalWeather.daily.winddirection_10m_dominant[currentDay]}°`}
+              </p>
+              <p>
+                {`${planetData[planet].globalWeather.daily.windspeed_10m_max[currentDay]}km/h`}
+              </p>
+              <p>2/10</p>
             </div>
           </>
         )}
