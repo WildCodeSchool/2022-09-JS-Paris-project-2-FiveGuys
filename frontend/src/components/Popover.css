@@ -1,0 +1,35 @@
+.MuiPopover-paper {
+  outline: 3px solid;
+  outline-color: var(--primary-color);
+  background-color: rgba(128, 128, 128, 0.677);
+  /* background-color: var(--dark-color); */
+  border-radius: var(--border-radius);
+}
+
+.popover-container {
+  width: 200px;
+  display: bloc;
+  text-align: center;
+  font-family: var(--text-font);
+  color: var(--light-color);
+  padding: 1rem;
+}
+
+.popover-title {
+  font-family: var(--title-font);
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.popover-icon {
+  margin-top: 1.5rem;
+}
+
+.popover-hour-time {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
