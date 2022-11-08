@@ -35,3 +35,18 @@
 .weather-icon img {
   width: 30%;
 }
+
+.weather-spec-icon {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3rem;
+}
+
+.weather-spec-icon img {
+  width: 10%;
+}
+
+.weather-spec-data {
+  display: flex;
+  justify-content: space-around;
+}
