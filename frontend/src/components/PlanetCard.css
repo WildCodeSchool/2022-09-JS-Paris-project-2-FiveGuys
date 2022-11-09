@@ -6,12 +6,14 @@
   background-color: lightgreen;
   width: 50%;
   height: 100%;
+  z-index: 99;
 }
 
 .planet-card-right {
   background-color: lightcoral;
   width: 50%;
   height: 100%;
+  z-index: 99;
 }
 
 .temperature-and-hour {
