@@ -1,14 +1,15 @@
 .page {
-  position: absolute;
-  background-color: yellow;
+  outline: 3px solid;
+  outline-color: var(--primary-color);
+  background-color: rgba(128, 128, 128, 0.85);
+  border-radius: var(--border-radius);
   height: 80vh;
   width: 85vw;
-  margin: 4vh 0 10vw 7.5vw;
+  position: absolute;
 }
 
 .page-title {
   width: 100%;
-  font-size: 3rem;
-  background-color: lightskyblue;
+  font-size: 4rem;
   text-align: center;
 }

@@ -59,7 +59,6 @@ function Planet({ size, name, pic, bgsize, initial, timezone }) {
           }}
           disableRestoreFocus
         >
-          {" "}
           <div className="popover-container">
             <Typography>
               <h2 className="popover-title"> {name} </h2>

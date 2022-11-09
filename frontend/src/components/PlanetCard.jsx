@@ -31,83 +31,103 @@ function PlanetCard({ planetData, setPlanetData }) {
       });
   }
   return (
-    <div className="page planet-card">
-      <div className="planet-card-left">
-        <Title>{planet}</Title>
-        <Calendar
-          days={planetData[planet]}
-          currentDay={currentDay}
-          setCurrentDay={setCurrentDay}
-        />
-
-        {planetData[planet].globalWeather && (
-          <>
-            <div className="temperature-and-hour">
-              <div>
-                {`${planetData[planet].globalWeather.daily.temperature_2m_max[currentDay]}°`}
+    <div className="page-container">
+      <div className="page planet-card">
+        <div className="planet-card-left">
+          <Title>{planet}</Title>
+          <div className="calendar-container">
+            <Calendar
+              days={planetData[planet]}
+              currentDay={currentDay}
+              setCurrentDay={setCurrentDay}
+            />
+          </div>
+          {planetData[planet].globalWeather && (
+            <>
+              <div className="temperature-and-hour">
+                <div>
+                  {`${planetData[planet].globalWeather.daily.temperature_2m_max[currentDay]}°`}
+                </div>
+                <div>{Timezone(planetData[planet].timezone)}</div>
               </div>
-              <div>{Timezone(planetData[planet].timezone)}</div>
-            </div>
-            <div className="weather-icon">
-              <img
-                src={weatherIcon(
-                  planetData[planet].globalWeather.daily.weathercode[
-                    currentDay
-                  ],
-                  "meteo-icon"
-                )}
-                alt="sun"
-              />
-            </div>
+              <div className="weather-icon">
+                <img
+                  src={weatherIcon(
+                    planetData[planet].globalWeather.daily.weathercode[
+                      currentDay
+                    ],
+                    "meteo-icon"
+                  )}
+                  alt="sun"
+                />
+              </div>
 
-            <div className="weather-spec-icon">
-              <img src={rain} alt="rain" />
-              <img src={windDirection} alt="Wind Direction" />
-              <img src={wind} alt="wind" />
-              <img src={sunrise} alt="sunrise" />
-              <img src={sunset} alt="sunset" />
-            </div>
-            <div className="weather-spec-data">
-              <p>
-                {`${planetData[planet].globalWeather.daily.precipitation_sum[currentDay]}mm`}
-              </p>
-              <p>
-                {`${planetData[planet].globalWeather.daily.winddirection_10m_dominant[currentDay]}°`}
-              </p>
-              <p>
-                {`${planetData[planet].globalWeather.daily.windspeed_10m_max[currentDay]}km/h`}
-              </p>
-              <p>
-                {`${planetData[planet].globalWeather.daily.sunrise[currentDay]}`.slice(
-                  -5
-                )}
-              </p>
-              <p>
-                {`${planetData[planet].globalWeather.daily.sunset[currentDay]}`.slice(
-                  -5
-                )}
-              </p>
-            </div>
-          </>
-        )}
-      </div>
+              <div className="weather-spec-icon">
+                <img src={rain} alt="rain" />
+                <img src={windDirection} alt="Wind Direction" />
+                <img src={wind} alt="wind" />
+                <img src={sunrise} alt="sunrise" />
+                <img src={sunset} alt="sunset" />
+              </div>
+              <div className="weather-spec-data">
+                <p>
+                  {`${planetData[planet].globalWeather.daily.precipitation_sum[currentDay]}mm`}
+                </p>
+                <p>
+                  {`${planetData[planet].globalWeather.daily.winddirection_10m_dominant[currentDay]}°`}
+                </p>
+                <p>
+                  {`${planetData[planet].globalWeather.daily.windspeed_10m_max[currentDay]}km/h`}
+                </p>
+                <p>
+                  {`${planetData[planet].globalWeather.daily.sunrise[currentDay]}`.slice(
+                    -5
+                  )}
+                </p>
+                <p>
+                  {`${planetData[planet].globalWeather.daily.sunset[currentDay]}`.slice(
+                    -5
+                  )}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
 
-      <div className="planet-card-right">
-        <img
-          src={new URL(`../style/assets/${planet}.png`, import.meta.url).href}
-          alt="planet"
-        />
-        <p>
-          Lorem ipsum dolor sit amet. Ab modi perspiciatis qui nihil nihil quo
-          suscipit quasi est pariatur nulla. At culpa nihil qui voluptatibus
-          recusandae non tempora praesentium ut accusamus voluptatem. In maxime
-          voluptatem nam voluptatibus expedita sed deleniti provident eum
-          architecto omnis sit galisum omnis aut odio maiores in tempore
-          impedit. Aut similique magnam est quia repudiandae qui{" "}
-        </p>
-        <Link to={`/planets/${planet}/info`}>
-          <button type="button">Would like to know more ?</button>{" "}
-        </Link>
+        <div className="planet-card-right">
+          <img
+            src={new URL(`../style/assets/${planet}.png`, import.meta.url).href}
+            alt="planet"
+          />
+          <div id="container-text-right">
+            <p className="text-right">
+              Lorem ipsum dolor sit amet. Ab modi perspiciatis qui nihil nihil
+              quo suscipit quasi est pariatur nulla. At culpa nihil qui
+              voluptatibus recusandae non tempora praesentium ut accusamus
+              voluptatem. In maxime voluptatem nam voluptatibus expedita sed
+              deleniti provident eum architecto omnis sit galisum omnis aut odio
+              maiores in tempore impedit. Aut similique magnam est quia
+              repudiandae quia Lorem ipsum dolor sit amet. Ab modi perspiciatis
+              qui nihil nihil quo suscipit quasi est pariatur nulla. At culpa
+              nihil qui voluptatibus recusandae non tempora praesentium ut
+              accusamus voluptatem. In maxime voluptatem nam voluptatibus
+              expedita sed deleniti provident eum architecto omnis sit galisum
+              omnis aut odio maiores in tempore impedit. Aut similique magnam
+              est quia repudiandae qui Lorem ipsum dolor sit amet. Ab modi
+              perspiciatis qui nihil nihil quo suscipit quasi est pariatur
+              nulla. At culpa nihil qui voluptatibus recusandae non tempora
+              praesentium ut accusamus voluptatem. In maxime voluptatem nam
+              voluptatibus expedita sed deleniti provident eum architecto omnis
+              sit galisum omnis aut odio maiores in tempore impedit. Aut
+              similique magnam est quia repudiandae qui
+            </p>
+          </div>
+          <Link to={`/planets/${planet}/info`}>
+            <button className="right-button" type="button">
+              <p>Would like to know more ?</p>
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
