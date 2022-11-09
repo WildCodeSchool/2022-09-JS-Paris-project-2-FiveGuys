@@ -3,8 +3,10 @@ import "./Planet.css";
 import "./Popover.css";
 import { Link } from "react-router-dom";
 import { Typography, Popover, StyledEngineProvider } from "@mui/material";
+import Timezone from "../services/Timezone";
+import weatherIcon from "../services/weatherIcon";
 
-function Planet({ size, name, pic, bgsize }) {
+function Planet({ size, name, pic, bgsize, initial, timezone }) {
   const planetStyle = {
     backgroundImage: `url("${pic}")`,
     width: `${size}rem`,
@@ -23,6 +25,7 @@ function Planet({ size, name, pic, bgsize }) {
   };
 
   const open = Boolean(anchorEl);
+
   const id = open ? "planet-popover" : undefined;
 
   return (
@@ -39,7 +42,7 @@ function Planet({ size, name, pic, bgsize }) {
       </Link>
       <StyledEngineProvider injectFirst>
         <Popover
-          id={id}
+          id="planet-popover"
           sx={{
             pointerEvents: "none",
           }}
@@ -61,15 +64,17 @@ function Planet({ size, name, pic, bgsize }) {
             <Typography>
               <h2 className="popover-title"> {name} </h2>
               <div className="popover-hour-time">
-                <p className="popover-temp"> 27° </p>
-                <p className="popover-time"> 14h00 </p>
+                <p className="popover-temp">
+                  {initial && `${initial.temperature_2m_max[0]}`}°
+                </p>
+                <p className="popover-time">{Timezone(timezone)}</p>
               </div>
-              {/*  <img
-                className="popover-icon"
-                src={icon}
-                alt="icon"
-                width="60px"
-              /> */}
+              <img
+                src={
+                  initial && weatherIcon(initial.weathercode[0], "meteo-icon")
+                }
+                alt="popoverPic"
+              />
             </Typography>
           </div>
         </Popover>

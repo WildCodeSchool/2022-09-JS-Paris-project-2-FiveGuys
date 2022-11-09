@@ -10,15 +10,16 @@ import wind from "../../public/static-icons/wind.png";
 import windDirection from "../../public/static-icons/wind-direction.png";
 import sunset from "../../public/static-icons/sunset.png";
 import sunrise from "../../public/static-icons/sunrise.png";
+import Timezone from "../services/Timezone";
+import weatherIcon from "../services/weatherIcon";
 
 function PlanetCard({ planetData, setPlanetData }) {
-  const current = new Date();
   const [currentDay, setCurrentDay] = useState(0);
   const { planet } = useParams();
 
   if (!planetData[planet].globalWeather) {
     fetchFunctions
-      .fetchData(planetData[planet].lat, planetData[planet].long)
+      .fetchData(planetData[planet].lat, planetData[planet].long, false)
       .then((data) => {
         setPlanetData({
           ...planetData,
@@ -45,19 +46,16 @@ function PlanetCard({ planetData, setPlanetData }) {
               <div>
                 {`${planetData[planet].globalWeather.daily.temperature_2m_max[currentDay]}°`}
               </div>
-              <div>
-                {current.getHours() + planetData[planet].timezone}H
-                {current.getMinutes().toString().padStart(2, "0")}
-              </div>
+              <div>{Timezone(planetData[planet].timezone)}</div>
             </div>
             <div className="weather-icon">
               <img
-                src={
-                  new URL(
-                    `../../public/meteo-icon/${planetData[planet].globalWeather.daily.weathercode[currentDay]}.png`,
-                    import.meta.url
-                  ).href
-                }
+                src={weatherIcon(
+                  planetData[planet].globalWeather.daily.weathercode[
+                    currentDay
+                  ],
+                  "meteo-icon"
+                )}
                 alt="sun"
               />
             </div>
