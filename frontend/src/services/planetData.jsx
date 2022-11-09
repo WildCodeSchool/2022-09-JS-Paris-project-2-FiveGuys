@@ -13,6 +13,7 @@ const planets = {
     size: 6,
     bgsize: 120,
     timezone: 0,
+    idApi: 1,
   },
   Naboo: {
     long: 47.5694,
@@ -21,6 +22,7 @@ const planets = {
     size: 6,
     bgsize: 150,
     timezone: 0,
+    idApi: 8,
   },
   Coruscant: {
     long: 22.5384,
@@ -29,6 +31,7 @@ const planets = {
     size: 6,
     bgsize: 130,
     timezone: 5,
+    idApi: 9,
   },
   Kashyyyk: {
     long: -60.0257,
@@ -37,6 +40,7 @@ const planets = {
     size: 6,
     bgsize: 170,
     timezone: -4,
+    idApi: 14,
   },
   Hoth: {
     long: -18.0,
@@ -45,14 +49,16 @@ const planets = {
     size: 3,
     bgsize: 140,
     timezone: +9,
+    idApi: 4,
   },
-  Death_Star: {
+  DeathStar: {
     long: 22.5384,
     lat: 5.6979,
     picture: deathStarPic,
     size: 4,
     bgsize: 155,
     timezone: false,
+    idApi: 28,
   },
 };
 

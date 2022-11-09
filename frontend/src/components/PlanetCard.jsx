@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./Page.css";
-import { useParams } from "react-router-dom";
-import fetchData from "../services/Fetch";
+import { useParams, Link } from "react-router-dom";
+import fetchFunctions from "../services/Fetch";
 import "./PlanetCard.css";
 import Title from "./Title";
 import Calendar from "./Calendar";
-import rain from "../style/assets/rain.png";
-import windDirection from "../style/assets/wind-direction.png";
-import wind from "../style/assets/wind.png";
-import uv from "../style/assets/uv.png";
+import rain from "../../public/static-icons/rain.png";
+import wind from "../../public/static-icons/wind.png";
+import windDirection from "../../public/static-icons/wind-direction.png";
+import sunset from "../../public/static-icons/sunset.png";
+import sunrise from "../../public/static-icons/sunrise.png";
 
 function PlanetCard({ planetData, setPlanetData }) {
   const current = new Date();
@@ -16,15 +17,17 @@ function PlanetCard({ planetData, setPlanetData }) {
   const { planet } = useParams();
 
   if (!planetData[planet].globalWeather) {
-    fetchData(planetData[planet].lat, planetData[planet].long).then((data) => {
-      setPlanetData({
-        ...planetData,
-        [planet]: {
-          ...planetData[planet],
-          globalWeather: data,
-        },
+    fetchFunctions
+      .fetchData(planetData[planet].lat, planetData[planet].long)
+      .then((data) => {
+        setPlanetData({
+          ...planetData,
+          [planet]: {
+            ...planetData[planet],
+            globalWeather: data,
+          },
+        });
       });
-    });
   }
   return (
     <div className="page planet-card">
@@ -58,11 +61,13 @@ function PlanetCard({ planetData, setPlanetData }) {
                 alt="sun"
               />
             </div>
+
             <div className="weather-spec-icon">
               <img src={rain} alt="rain" />
               <img src={windDirection} alt="Wind Direction" />
               <img src={wind} alt="wind" />
-              <img src={uv} alt="UV" />
+              <img src={sunrise} alt="sunrise" />
+              <img src={sunset} alt="sunset" />
             </div>
             <div className="weather-spec-data">
               <p>
@@ -74,13 +79,38 @@ function PlanetCard({ planetData, setPlanetData }) {
               <p>
                 {`${planetData[planet].globalWeather.daily.windspeed_10m_max[currentDay]}km/h`}
               </p>
-              <p>2/10</p>
+              <p>
+                {`${planetData[planet].globalWeather.daily.sunrise[currentDay]}`.slice(
+                  -5
+                )}
+              </p>
+              <p>
+                {`${planetData[planet].globalWeather.daily.sunset[currentDay]}`.slice(
+                  -5
+                )}
+              </p>
             </div>
           </>
         )}
       </div>
 
-      <div className="planet-card-right">right</div>
+      <div className="planet-card-right">
+        <img
+          src={new URL(`../style/assets/${planet}.png`, import.meta.url).href}
+          alt="planet"
+        />
+        <p>
+          Lorem ipsum dolor sit amet. Ab modi perspiciatis qui nihil nihil quo
+          suscipit quasi est pariatur nulla. At culpa nihil qui voluptatibus
+          recusandae non tempora praesentium ut accusamus voluptatem. In maxime
+          voluptatem nam voluptatibus expedita sed deleniti provident eum
+          architecto omnis sit galisum omnis aut odio maiores in tempore
+          impedit. Aut similique magnam est quia repudiandae qui{" "}
+        </p>
+        <Link to={`/planets/${planet}/info`}>
+          <button type="button">Would like to know more ?</button>{" "}
+        </Link>
+      </div>
     </div>
   );
 }

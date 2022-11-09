@@ -11,6 +11,7 @@ import PlanetCard from "./components/PlanetCard";
 import AboutUs from "./components/AboutUs";
 import News from "./components/News";
 import Contact from "./components/Contact";
+import PlanetInfo from "./components/PlanetInfo";
 
 function App() {
   const [planetData, setPlanetData] = useState(planets);
@@ -41,6 +42,7 @@ function App() {
                 />
               }
             />
+            <Route path="planets/:planet/info" element={<PlanetInfo />} />
           </Routes>
           <Map />
           <Footer />
