@@ -1,7 +1,6 @@
-import fetchFunctions from "@services/Fetch";
 import React from "react";
-
 import { useParams } from "react-router-dom";
+import fetchFunctions from "../services/Fetch";
 import planets from "../services/planetData";
 
 function PlanetInfo() {
