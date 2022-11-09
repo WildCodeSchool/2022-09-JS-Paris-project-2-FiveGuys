@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Page.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import fetchFunctions from "../services/Fetch";
 import "./PlanetCard.css";
 import Title from "./Title";
@@ -10,7 +10,6 @@ import wind from "../../public/static-icons/wind.png";
 import windDirection from "../../public/static-icons/wind-direction.png";
 import sunset from "../../public/static-icons/sunset.png";
 import sunrise from "../../public/static-icons/sunrise.png";
-import { Link } from "react-router-dom";
 
 function PlanetCard({ planetData, setPlanetData }) {
   const current = new Date();
@@ -21,7 +20,6 @@ function PlanetCard({ planetData, setPlanetData }) {
     fetchFunctions
       .fetchData(planetData[planet].lat, planetData[planet].long)
       .then((data) => {
-        console.log(data);
         setPlanetData({
           ...planetData,
           [planet]: {
@@ -110,7 +108,7 @@ function PlanetCard({ planetData, setPlanetData }) {
           impedit. Aut similique magnam est quia repudiandae qui{" "}
         </p>
         <Link to={`/planets/${planet}/info`}>
-          <button>Would like to know more ?</button>{" "}
+          <button type="button">Would like to know more ?</button>{" "}
         </Link>
       </div>
     </div>

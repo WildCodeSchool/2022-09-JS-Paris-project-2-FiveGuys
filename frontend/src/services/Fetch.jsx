@@ -1,5 +1,4 @@
 import axios from "axios";
-import planets from "./planetData";
 
 const fetchFunctions = {
   fetchData(lat, long) {

@@ -3,7 +3,6 @@ import "./Planet.css";
 import "./Popover.css";
 import { Link } from "react-router-dom";
 import { Typography, Popover, StyledEngineProvider } from "@mui/material";
-import icon from "../style/assets/0.png";
 
 function Planet({ size, name, pic, bgsize }) {
   const planetStyle = {
@@ -65,12 +64,12 @@ function Planet({ size, name, pic, bgsize }) {
                 <p className="popover-temp"> 27° </p>
                 <p className="popover-time"> 14h00 </p>
               </div>
-              <img
+              {/*  <img
                 className="popover-icon"
                 src={icon}
                 alt="icon"
                 width="60px"
-              />
+              /> */}
             </Typography>
           </div>
         </Popover>
