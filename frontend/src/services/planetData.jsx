@@ -14,6 +14,8 @@ const planets = {
     bgsize: 120,
     timezone: 0,
     idApi: 1,
+    pictureInfo: "HothInfo",
+    people: [13, 80],
   },
   Naboo: {
     long: 47.5694,
@@ -23,6 +25,8 @@ const planets = {
     bgsize: 150,
     timezone: 0,
     idApi: 8,
+    pictureInfo: "HothInfo",
+    people: [13, 80],
   },
   Coruscant: {
     long: 22.5384,
@@ -32,6 +36,8 @@ const planets = {
     bgsize: 130,
     timezone: 5,
     idApi: 9,
+    pictureInfo: "HothInfo",
+    people: [13, 80],
   },
   Kashyyyk: {
     long: -60.0257,
@@ -41,6 +47,9 @@ const planets = {
     bgsize: 170,
     timezone: -4,
     idApi: 14,
+    pictureInfo: "HothInfo",
+    people: ["Chewbacca", "Tarfful"],
+    creatures: ["Cancell"],
   },
   Hoth: {
     long: -18.0,
@@ -50,6 +59,8 @@ const planets = {
     bgsize: 140,
     timezone: +9,
     idApi: 4,
+    pictureInfo: "HothInfo",
+    people: [13, 80],
   },
   DeathStar: {
     long: 22.5384,
@@ -59,6 +70,8 @@ const planets = {
     bgsize: 155,
     timezone: false,
     idApi: 28,
+    pictureInfo: "HothInfo",
+    people: [13, 80],
   },
 };
 

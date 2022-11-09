@@ -1,0 +1,38 @@
+.planet-info {
+  display: flex;
+}
+
+/******************************* LEFT *******************************/
+.planet-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgreen;
+  width: 50%;
+  height: 100%;
+  z-index: 99;
+}
+
+.planet-info-pic {
+  width: 90%;
+  border-radius: var(--border-radius);
+  margin: 0.5rem;
+}
+
+/******************************* RIGHT *******************************/
+.planet-info-right {
+  background-color: lightcoral;
+  width: 50%;
+  height: 100%;
+  z-index: 99;
+}
+
+.planet-info-people-container {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+.planet-info-people-container img {
+  width: 50%;
+}
