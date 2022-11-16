@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import fetchFunctions from "../services/Fetch";
+import weatherIcon from "../services/weatherIcon";
+import "./PlanetInfo.css";
 
 function PlanetPeople({ people }) {
   const [famousPeople, setFamousPeople] = useState([]);
@@ -14,10 +16,19 @@ function PlanetPeople({ people }) {
       }),
     [people]
   );
-
+  /* console.log(famousPeople); */
   return (
     <div className="planet-famous-people">
-      {famousPeople.map((peep) => peep.name).slice(0, 2)}
+      {famousPeople.slice(0, 2).map((peep) => (
+        <>
+          <div> {peep.name}</div>
+          <img
+            className="planet-people-pic"
+            src={weatherIcon(peep.name, "people")}
+            alt={peep.name}
+          />
+        </>
+      ))}
     </div>
   );
 }

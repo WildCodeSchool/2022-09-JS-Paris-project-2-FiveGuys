@@ -29,6 +29,10 @@
   width: 100%;
 }
 
+.Flags {
+  height: 5%;
+}
+
 /******************************* RIGHT *******************************/
 .planet-info-right {
   background-color: lightcoral;
@@ -47,6 +51,7 @@
   width: 50%;
 }
 
-.Flags {
-  height: 5%;
+.planet-people-pic {
+  width: 40%;
+  border-radius: var(--border-radius);
 }

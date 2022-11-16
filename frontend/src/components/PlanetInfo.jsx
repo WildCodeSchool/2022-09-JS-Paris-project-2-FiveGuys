@@ -25,8 +25,8 @@ function PlanetInfo() {
         <Title>{planet}</Title>
         <img
           className="planet-info-pic"
-          src={weatherIcon(planets[planet].pictureInfo, "planet-info")}
-          alt="planet-info"
+          src={weatherIcon(planets[planet].pictureInfo, "planet-info-pic")}
+          alt="planet-info-pic"
         />
         {!planetInfo ? (
           <div>Loading..</div>
