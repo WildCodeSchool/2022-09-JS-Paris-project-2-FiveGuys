@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="total">
       <div className="stars" />
       <div className="twinkling" />
       <div className="others">

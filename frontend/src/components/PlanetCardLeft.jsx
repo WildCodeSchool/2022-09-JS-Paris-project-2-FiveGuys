@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchFunctions from "../services/Fetch";
-import "./Page.css";
 import "./PlanetCard.css";
 import Title from "./Title";
 import Calendar from "./Calendar";
