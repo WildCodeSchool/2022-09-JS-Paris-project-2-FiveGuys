@@ -7,8 +7,8 @@ import deathStarPic from "../style/assets/deathstar.png";
 
 const planets = {
   Tatooine: {
-    long: 22.5384,
-    lat: 5.6979,
+    long: 5.5153,
+    lat: 22.8268,
     picture: tatooinePic,
     size: 6,
     bgsize: 120,
@@ -16,8 +16,8 @@ const planets = {
     idApi: 1,
   },
   Naboo: {
-    long: 47.5694,
-    lat: 0.3443,
+    long: 0.3401,
+    lat: 46.5802,
     picture: nabooPic,
     size: 6,
     bgsize: 150,
@@ -25,8 +25,8 @@ const planets = {
     idApi: 8,
   },
   Coruscant: {
-    long: 22.5384,
-    lat: 5.6979,
+    long: 74.3141,
+    lat: 31.5656,
     picture: coruscantPic,
     size: 6,
     bgsize: 130,

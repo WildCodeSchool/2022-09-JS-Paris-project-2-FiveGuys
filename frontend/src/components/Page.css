@@ -12,4 +12,5 @@
   width: 100%;
   font-size: 4rem;
   text-align: center;
+  font-family: var(--title-font);
 }
