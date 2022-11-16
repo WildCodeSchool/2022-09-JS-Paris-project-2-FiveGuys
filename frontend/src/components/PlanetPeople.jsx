@@ -17,7 +17,7 @@ function PlanetPeople({ people }) {
 
   return (
     <div className="planet-famous-people">
-      {famousPeople.map((peep) => peep.name).slice(0, 3)}
+      {famousPeople.map((peep) => peep.name).slice(0, 2)}
     </div>
   );
 }
