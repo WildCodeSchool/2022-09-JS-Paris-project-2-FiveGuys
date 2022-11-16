@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./Page.css";
 import { useParams, Link } from "react-router-dom";
 import fetchFunctions from "../services/Fetch";
+import "./Page.css";
 import "./PlanetCard.css";
 import Title from "./Title";
 import Calendar from "./Calendar";
+import Weathername from "../services/WeatherName";
 import rain from "../../public/static-icons/rain.png";
 import wind from "../../public/static-icons/wind.png";
 import windDirection from "../../public/static-icons/wind-direction.png";
@@ -30,9 +31,10 @@ function PlanetCard({ planetData, setPlanetData }) {
         });
       });
   }
+
   return (
     <div className="page-container">
-      <div className="page planet-card">
+      <div className="page">
         <div className="planet-card-left">
           <Title>{planet}</Title>
           <div className="calendar-container">
@@ -61,7 +63,15 @@ function PlanetCard({ planetData, setPlanetData }) {
                   alt="sun"
                 />
               </div>
-
+              <div className="weatherName">
+                <p>
+                  {Weathername(
+                    planetData[planet].globalWeather.daily.weathercode[
+                      currentDay
+                    ]
+                  )}
+                </p>
+              </div>
               <div className="weather-spec-icon">
                 <img src={rain} alt="rain" />
                 <img src={windDirection} alt="Wind Direction" />

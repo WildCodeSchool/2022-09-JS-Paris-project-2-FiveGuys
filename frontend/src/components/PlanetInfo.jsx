@@ -5,6 +5,7 @@ import planets from "../services/planetData";
 import "./PlanetInfo.css";
 import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
+import "./PlanetCard.css";
 
 function PlanetInfo() {
   const { planet } = useParams();
@@ -40,19 +41,6 @@ function PlanetInfo() {
 
       <div className="planet-info-right">
         <h3>Famous people</h3>
-        <div className="planet-info-people-container">
-          {planets[planet].people.map((e) => (
-            <div className="planet-info-people">
-              <img
-                className="people-info-pic"
-                src={weatherIcon(e, "people")}
-                alt="people"
-              />
-              <p>{e}</p>
-            </div>
-          ))}
-        </div>
-        <h3>Creatures</h3>
       </div>
     </div>
   );
