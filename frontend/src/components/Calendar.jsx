@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-function Calendar({ days, currentDay, setCurrentDay }) {
+function Calendar({ days, setCurrentDay }) {
   const current = new Date();
   const [daysIndex, setDaysIndex] = useState(0);
-  console.warn(currentDay);
 
   return (
     <div className="calendar-scroll">
@@ -11,7 +10,7 @@ function Calendar({ days, currentDay, setCurrentDay }) {
         <button
           type="button"
           className="calendar-arrow"
-          disabled={daysIndex === 0 && true}
+          disabled={daysIndex === 0}
           onClick={() => setDaysIndex(daysIndex - 1)}
         >
           &#129080;
@@ -39,7 +38,7 @@ function Calendar({ days, currentDay, setCurrentDay }) {
         <button
           type="button"
           className="calendar-arrow"
-          disabled={daysIndex === 3 && true}
+          disabled={daysIndex === 3}
           onClick={() => setDaysIndex(daysIndex + 1)}
         >
           &#129082;

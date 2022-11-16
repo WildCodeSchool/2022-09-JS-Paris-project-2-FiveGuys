@@ -1,16 +1,16 @@
 const weatherCode = {
-  Clear_sky: [0],
-  Cloudy: [1, 2, 3],
-  Foggy: [45, 48],
-  Drizzle: [51, 53, 55],
-  Freezing_drizzle: [56, 57],
-  Rainy: [61, 63, 65],
-  Freezing_rain: [66, 67],
-  Snow: [71, 73, 75],
-  Snow_grains: [77],
-  Rain_shower: [80, 81, 82],
-  Snow_shower: [85, 86],
-  Thunderstorm: [95, 96, 99],
+  clear_sky: [0],
+  cloudy: [1, 2, 3],
+  foggy: [45, 48],
+  drizzle: [51, 53, 55],
+  freezing_drizzle: [56, 57],
+  rainy: [61, 63, 65],
+  freezing_rain: [66, 67],
+  snow: [71, 73, 75],
+  snow_grains: [77],
+  rain_shower: [80, 81, 82],
+  snow_shower: [85, 86],
+  thunderstorm: [95, 96, 99],
 };
 
 const Weathername = (code) => {
