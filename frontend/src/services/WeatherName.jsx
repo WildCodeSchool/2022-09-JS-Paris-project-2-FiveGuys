@@ -1,4 +1,5 @@
-const weatherCode = {
+// Cette variable fait le mapping entre le code de l'API (ex: weathercode = 0) et la fonction (qui renvoit clear sky)
+const weatherCodeMapping = {
   clear_sky: [0],
   cloudy: [1, 2, 3],
   foggy: [45, 48],
@@ -14,7 +15,7 @@ const weatherCode = {
 };
 
 const Weathername = (code) => {
-  return Object.entries(weatherCode).map(([key, value]) => {
+  return Object.entries(weatherCodeMapping).map(([key, value]) => {
     return (
       value.find((el) => el === code) && key.replace("_", " ").toUpperCase()
     );
