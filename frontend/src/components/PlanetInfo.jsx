@@ -6,6 +6,9 @@ import "./PlanetInfo.css";
 import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
 import "./PlanetCard.css";
+import "./PlanetInfo.css";
+import Title from "./Title";
+import weatherIcon from "../services/weatherIcon";
 
 function PlanetInfo() {
   const { planet } = useParams();
