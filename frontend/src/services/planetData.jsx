@@ -15,7 +15,8 @@ const planets = {
     timezone: 0,
     idApi: 1,
     pictureInfo: "HothInfo",
-    people: [13, 80],
+    faction: "Hutt",
+    creature: ["C1, C2, C3"],
   },
   Naboo: {
     long: 0.3401,
@@ -26,7 +27,9 @@ const planets = {
     timezone: 0,
     idApi: 8,
     pictureInfo: "HothInfo",
-    people: [13, 80],
+
+    faction: "Empire",
+    creature: ["C1, C2, C3"],
   },
   Coruscant: {
     long: 74.3141,
@@ -38,6 +41,8 @@ const planets = {
     idApi: 9,
     pictureInfo: "HothInfo",
     people: [13, 80],
+    faction: "Empire",
+    creature: ["Creature1", "Creature2"],
   },
   Kashyyyk: {
     long: -60.0257,
@@ -48,8 +53,9 @@ const planets = {
     timezone: -4,
     idApi: 14,
     pictureInfo: "HothInfo",
-    people: ["Chewbacca", "Tarfful"],
-    creatures: ["Cancell"],
+    people: [],
+    faction: "Rebel",
+    creature: ["C1, C2, C3"],
   },
   Hoth: {
     long: -18.0,
@@ -61,6 +67,8 @@ const planets = {
     idApi: 4,
     pictureInfo: "HothInfo",
     people: [13, 80],
+    faction: "Rebel",
+    creature: ["C1, C2, C3"],
   },
   DeathStar: {
     long: 22.5384,
@@ -72,6 +80,8 @@ const planets = {
     idApi: 28,
     pictureInfo: "HothInfo",
     people: [13, 80],
+    faction: "Empire",
+    creature: ["C1, C2, C3"],
   },
 };
 

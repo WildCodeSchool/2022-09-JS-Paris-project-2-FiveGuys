@@ -19,6 +19,16 @@
   margin: 0.5rem;
 }
 
+.planet-detail-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.planet-detail-item {
+  width: 100%;
+}
+
 /******************************* RIGHT *******************************/
 .planet-info-right {
   background-color: lightcoral;
@@ -35,4 +45,8 @@
 
 .planet-info-people-container img {
   width: 50%;
+}
+
+.Flags {
+  height: 5%;
 }

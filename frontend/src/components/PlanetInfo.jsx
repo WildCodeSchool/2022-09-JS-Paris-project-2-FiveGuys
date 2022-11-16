@@ -9,11 +9,12 @@ import "./PlanetCard.css";
 import "./PlanetInfo.css";
 import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
+import PlanetFlag from "./PlanetFlag";
+import PlanetPeople from "./PlanetPeople";
 
 function PlanetInfo() {
   const { planet } = useParams();
   const [planetInfo, setPlanetInfo] = useState({});
-  /* console.log(planets[planet].pictureInfo); */
 
   useEffect(() => {
     fetchFunctions.fetchStarWars(planets[planet].idApi).then((data) => {
@@ -31,19 +32,44 @@ function PlanetInfo() {
           alt="planet-info"
         />
         {!planetInfo ? (
-          <p>Loading..</p>
+          <div>Loading..</div>
         ) : (
-          <>
-            <div>Population: {planetInfo.population}</div>
-            <div>Diameter: {planetInfo.diameter}</div>
-            <div>Climate: {planetInfo.climate}</div>
-            <div>Orbital period: {planetInfo.orbital_period}</div>
-          </>
+          <div className="planetInfo-container">
+            <div className="planet-detail-info">
+              <ul>
+                <li className="planet-detail-item">
+                  Population: {planetInfo.population}
+                </li>
+                <li className="planet-detail-item">
+                  Diameter: {planetInfo.diameter}
+                </li>
+                <li className="planet-detail-item">
+                  Climate: {planetInfo.climate}
+                </li>
+                <li className="planet-detail-item">
+                  Orbital period: {planetInfo.orbital_period}
+                </li>
+              </ul>
+            </div>
+            <PlanetFlag faction={planets[planet].faction} />
+          </div>
         )}
       </div>
-
       <div className="planet-info-right">
         <h3>Famous people</h3>
+        {!planetInfo ? (
+          <div>Loading..</div>
+        ) : (
+          <PlanetPeople people={planetInfo.residents} />
+        )}
+        <h3>Terrain</h3>
+        {!planetInfo ? <div>Loading..</div> : <div>{planetInfo.terrain}</div>}
+        <h3>Creature</h3>
+        {!planetInfo ? (
+          <div>Loading..</div>
+        ) : (
+          <div>{planets[planet].creature}</div>
+        )}
       </div>
     </div>
   );
