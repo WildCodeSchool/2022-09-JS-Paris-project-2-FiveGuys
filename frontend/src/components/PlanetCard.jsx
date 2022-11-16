@@ -81,13 +81,27 @@ function PlanetCard({ planetData, setPlanetData }) {
               </div>
               <div className="weather-spec-data">
                 <p>
-                  {`${planetData[planet].globalWeather.daily.precipitation_sum[currentDay]}mm`}
+                  {
+                    planetData[planet].globalWeather.daily.precipitation_sum[
+                      currentDay
+                    ]
+                  }
+                  mm
                 </p>
                 <p>
-                  {`${planetData[planet].globalWeather.daily.winddirection_10m_dominant[currentDay]}°`}
+                  {
+                    planetData[planet].globalWeather.daily
+                      .winddirection_10m_dominant[currentDay]
+                  }
+                  °
                 </p>
                 <p>
-                  {`${planetData[planet].globalWeather.daily.windspeed_10m_max[currentDay]}km/h`}
+                  {
+                    planetData[planet].globalWeather.daily.windspeed_10m_max[
+                      currentDay
+                    ]
+                  }
+                  km/h
                 </p>
                 <p>
                   {`${planetData[planet].globalWeather.daily.sunrise[currentDay]}`.slice(
