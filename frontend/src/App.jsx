@@ -6,12 +6,11 @@ import fetchFunctions from "./services/Fetch";
 import Map from "./pages/Map";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PlanetCard from "./components/PlanetCard";
 import PlanetInfo from "./components/PlanetInfo";
 import planets from "./services/planetData";
+import PlanetCard from "./components/PlanetCard";
 
 function App() {
-  const [planetData, setPlanetData] = useState(planets);
   const [initial, setInitial] = useState({});
 
   useEffect(() => {
@@ -30,15 +29,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route
-              path="planets/:planet"
-              element={
-                <PlanetCard
-                  planetData={planetData}
-                  setPlanetData={setPlanetData}
-                />
-              }
-            />
+            <Route path="planets/:planet" element={<PlanetCard />} />
             <Route path="planets/:planet/info" element={<PlanetInfo />} />
           </Routes>
           <Map initial={initial} />

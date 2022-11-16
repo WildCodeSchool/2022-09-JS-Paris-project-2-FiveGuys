@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 
-function Calendar({ days, setCurrentDay }) {
+function Calendar({ setCurrentDay }) {
   const current = new Date();
   const [daysIndex, setDaysIndex] = useState(0);
+  const days = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+  ];
 
   return (
     <div className="calendar-scroll">
@@ -16,24 +25,22 @@ function Calendar({ days, setCurrentDay }) {
           &#129080;
         </button>
 
-        {days.globalWeather &&
-          days.globalWeather.daily.precipitation_sum
-            .map((_, index) => {
-              const keyToGive = `calendar button ${index}`;
-              return (
-                <button
-                  className="benjamin-button"
-                  onClick={() => setCurrentDay(index)}
-                  type="button"
-                  key={keyToGive}
-                >
-                  {index === 0
-                    ? "today"
-                    : `${current.getDate() + index}/${current.getMonth() + 1}`}
-                </button>
-              );
-            })
-            .slice(daysIndex, daysIndex + 4)}
+        {days
+          .map((day, index) => {
+            return (
+              <button
+                className="benjamin-button"
+                onClick={() => setCurrentDay(index)}
+                type="button"
+                key={day}
+              >
+                {index === 0
+                  ? "today"
+                  : `${current.getDate() + index}/${current.getMonth() + 1}`}
+              </button>
+            );
+          })
+          .slice(daysIndex, daysIndex + 4)}
 
         <button
           type="button"
