@@ -1,57 +1,123 @@
-.planet-info {
-  display: flex;
-}
-
-/******************************* LEFT *******************************/
+/********************************************** LEFT **********************************************/
 .planet-info-left {
+  margin-top: 0%;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightgreen;
   width: 50%;
-  height: 100%;
   z-index: 99;
+  overflow-y: hidden;
 }
 
-.planet-info-pic {
+.planet-info-left-pic {
   width: 90%;
   border-radius: var(--border-radius);
   margin: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.planet-detail-info {
-  display: flex;
+.planet-info-left-bottom-container {
   width: 100%;
-  justify-content: space-around;
-}
-
-.planet-detail-item {
-  width: 100%;
-}
-
-.Flags {
-  height: 5%;
-}
-
-/******************************* RIGHT *******************************/
-.planet-info-right {
-  background-color: lightcoral;
-  width: 50%;
-  height: 100%;
-  z-index: 99;
-}
-
-.planet-info-people-container {
-  background-color: blue;
   display: flex;
+  max-height: 30%;
+
+  justify-content: space-evenly;
+}
+.planet-info-left-bottom-container figure {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.planet-info-people-container img {
-  width: 50%;
+.planet-info-left-bottom-container img {
+  height: 60%;
 }
 
-.planet-people-pic {
-  width: 40%;
+.planet-info-left-bottom-container figcaption {
+  margin-top: 3%;
+  font-size: 80%;
+}
+
+.planet-info-left-bottom-container-info {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.planet-info-left-bottom-container-info ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.planet-info-left-bottom-container-info li {
+  list-style-image: url(../../public/icon-vader/Darth.png);
+}
+
+/********************************************** RIGHT **********************************************/
+.planet-info-right {
+  width: 50%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.planet-info-right figcaption {
+  text-align: center;
+  font-size: 15px;
+}
+
+.planet-info-right h3 {
+  margin-bottom: 0.5rem;
+  font-size: 22px;
+}
+
+.planet-info-right img {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 11rem;
+  height: 7rem;
   border-radius: var(--border-radius);
+}
+/******************************* PEOPLE *******************************/
+
+.planet-info-right-people-pics {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5%;
+}
+
+.planet-info-right-people-title {
+  text-align: center;
+}
+
+/******************************* Creatures *******************************/
+
+.planet-info-right-creatures-container {
+  background-color: transparent;
+}
+
+.planet-info-right-creatures-pics {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
+}
+
+.planet-info-right-creatures-title {
+  text-align: center;
+}
+
+/******************************* terrains *******************************/
+.planet-info-right-terrains-container {
+  background-color: transparent;
+}
+.planet-info-right-terrains-title {
+  text-align: center;
+}
+
+.planet-info-right-terrains-pics {
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
 }

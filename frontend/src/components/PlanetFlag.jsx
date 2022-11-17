@@ -4,6 +4,15 @@ import "./PlanetInfo.css";
 
 export default function PlanetFlag({ faction }) {
   return (
-    <img className="Flags" src={weatherIcon(faction, "flags")} alt={faction} />
+    <figure>
+      <img
+        className="planet-info-left-bottom-container-flag"
+        src={weatherIcon(faction, "flags")}
+        alt={faction}
+      />
+      <figcaption>
+        Authority in place:<p>{faction}</p>
+      </figcaption>
+    </figure>
   );
 }

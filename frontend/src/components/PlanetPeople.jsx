@@ -18,16 +18,16 @@ function PlanetPeople({ people }) {
   );
   /* console.log(famousPeople); */
   return (
-    <div className="planet-famous-people">
+    <div className="planet-info-right-people-pics">
       {famousPeople.slice(0, 2).map((peep) => (
-        <>
-          <div> {peep.name}</div>
+        <figure>
           <img
-            className="planet-people-pic"
+            className="planet-info-right-people-pic"
             src={weatherIcon(peep.name, "people")}
             alt={peep.name}
           />
-        </>
+          <figcaption> {peep.name}</figcaption>
+        </figure>
       ))}
     </div>
   );

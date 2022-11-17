@@ -3,6 +3,7 @@ import "./Planet.css";
 import "./Popover.css";
 import { Link } from "react-router-dom";
 import { Typography, Popover, StyledEngineProvider } from "@mui/material";
+import Weathername from "../services/WeatherName";
 import Timezone from "../services/Timezone";
 import weatherIcon from "../services/weatherIcon";
 
@@ -30,7 +31,7 @@ function Planet({ size, name, pic, bgsize, initial, timezone }) {
 
   return (
     <div className="planet-container">
-      <Link to={`planets/${name}`}>
+      <Link to={`${name}` === "DeathStar" ? "/error_404" : `planets/${name}`}>
         <div
           className="planet-button"
           style={planetStyle}
@@ -74,6 +75,7 @@ function Planet({ size, name, pic, bgsize, initial, timezone }) {
                 }
                 alt="popoverPic"
               />
+              <p> {Weathername(initial?.weathercode[0])}</p>
             </Typography>
           </div>
         </Popover>

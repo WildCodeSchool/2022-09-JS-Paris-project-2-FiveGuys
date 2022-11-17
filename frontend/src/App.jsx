@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import PlanetInfo from "./components/PlanetInfo";
 import planets from "./services/planetData";
 import PlanetCard from "./components/PlanetCard";
+import Page404 from "./components/Page404";
 
 function App() {
   const [initial, setInitial] = useState({});
@@ -31,6 +32,7 @@ function App() {
           <Routes>
             <Route path="planets/:planet" element={<PlanetCard />} />
             <Route path="planets/:planet/info" element={<PlanetInfo />} />
+            <Route path="/error_404" element={<Page404 />} />
           </Routes>
           <Map initial={initial} />
           <Footer />
