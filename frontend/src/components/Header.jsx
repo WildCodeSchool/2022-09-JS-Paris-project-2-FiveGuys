@@ -1,10 +1,12 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 
 function Header() {
   return (
     <div className="header">
+      <BurgerMenu />
       <div className="header-list">
         <ul>
           <li>

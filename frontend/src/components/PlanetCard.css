@@ -9,6 +9,20 @@
   height: 80vh;
   width: 85vw;
   position: absolute;
+  -webkit-appearance: none;
+  color: var(--light-color);
+}
+
+.planet-card-left {
+  width: 50%;
+  height: 100%;
+}
+
+.page-title {
+  width: 100%;
+  font-size: 3.6rem;
+  text-align: center;
+  font-family: var(--title-font);
 }
 
 .page-container {
@@ -30,10 +44,14 @@
   display: flex;
   justify-content: center;
   gap: 10%;
+  -webkit-appearance: none;
 }
 
 .benjamin-button {
-  padding: 5% 10% 5% 10%;
+  padding: 5% 15% 5% 15%;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 11px;
 }
 
 .calendar-arrow {
@@ -46,16 +64,6 @@
 .calendar-scroll {
   display: flex;
   justify-content: center;
-}
-
-.planet-card-left {
-  width: 50%;
-  height: 100%;
-}
-
-.planet-card-right {
-  width: 50%;
-  height: 100%;
 }
 
 .temperature-and-hour {
@@ -85,7 +93,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3%;
+  padding-top: 4%;
   font-size: 1.8rem;
   font-family: var(--text-font);
 }
@@ -93,7 +101,7 @@
 .weather-spec-icon {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 2%;
+  margin-top: 4%;
 }
 
 .weather-spec-icon img {
@@ -111,6 +119,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  height: 100%;
 }
 
 .planet-card-right img {
@@ -130,11 +140,19 @@
 }
 
 #container-text-right {
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: justify;
   font-size: 0.8rem;
   padding-left: 6%;
   padding-right: 6%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .text-right {
@@ -143,9 +161,82 @@
 
 .right-button {
   margin-bottom: 20px;
+  border: none;
 }
 
 .right-button p {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 414px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+  }
+
+  /************************ LEFT PART *************************/
+
+  .page-title {
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    font-family: var(--title-font);
+  }
+
+  .planet-card-left {
+    width: 100%;
+    height: 100%;
+  }
+
+  .calendar-button {
+    width: 50%;
+    gap: 15%;
+  }
+
+  .temperature-and-hour {
+    font-size: 150%;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .weather-icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  .weather-icon img {
+    width: 40%;
+  }
+
+  /************************ RIGHT PART *************************/
+
+  .planet-card-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .planet-card-right img {
+    max-height: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #container-text-right {
+    height: 100%;
+    overflow: initial;
+  }
+
+  .text-right {
+    height: 50%;
+  }
+
+  .planet-card-right button {
+    padding: 8px;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+  }
 }

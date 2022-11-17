@@ -57,3 +57,14 @@
   grid-row: 9;
   grid-column: 10;
 }
+
+@media screen and (max-width: 414px) {
+  #map {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    overflow-y: scroll;
+    padding-top: 8%;
+    padding-bottom: 8%;
+  }
+}

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import PlanetInfo from "./components/PlanetInfo";
 import planets from "./services/planetData";
 import PlanetCard from "./components/PlanetCard";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const [initial, setInitial] = useState({});
@@ -22,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="total">
       <div className="stars" />
       <div className="twinkling" />
       <div className="others">
@@ -31,6 +32,7 @@ function App() {
           <Routes>
             <Route path="planets/:planet" element={<PlanetCard />} />
             <Route path="planets/:planet/info" element={<PlanetInfo />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
           </Routes>
           <Map initial={initial} />
           <Footer />

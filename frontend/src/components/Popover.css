@@ -36,3 +36,9 @@
   font-weight: 500;
   font-size: 1.3rem;
 }
+
+@media screen and (max-width: 414px) {
+  .MuiPopover-paper {
+    display: none;
+  }
+}

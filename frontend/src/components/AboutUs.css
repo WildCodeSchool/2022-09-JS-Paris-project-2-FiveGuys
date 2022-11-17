@@ -1,0 +1,35 @@
+.aboutUs-global {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutUs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: 3px solid;
+  outline-color: var(--primary-color);
+  background-color: rgba(128, 128, 128, 0.85);
+  border-radius: var(--border-radius);
+  height: 80vh;
+  width: 85vw;
+  position: absolute;
+  color: var(--light-color);
+}
+
+.us-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  justify-content: center;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+.aboutUs-title {
+  padding-top: 1%;
+}

@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import "./Page.css";
 import "./PlanetCard.css";
 
 function PlanetCardRight() {
