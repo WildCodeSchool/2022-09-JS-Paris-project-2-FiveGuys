@@ -10,9 +10,9 @@ function PlanetPeople({ people }) {
     () =>
       people &&
       people.forEach((url) => {
-        fetchFunctions
-          .fetchResidents(url)
-          .then((data) => setFamousPeople((old) => [...old, data]));
+        fetchFunctions.fetchResidents(url).then((data) => {
+          setFamousPeople((old) => [...old, data]);
+        });
       }),
     [people]
   );

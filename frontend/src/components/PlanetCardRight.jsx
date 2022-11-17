@@ -34,7 +34,7 @@ function PlanetCardRight() {
       </div>
       <Link to={`/planets/${planet}/info`}>
         <button className="right-button" type="button">
-          <p>Would like to know more ?</p>
+          Would like to know more ?
         </button>
       </Link>
     </div>
