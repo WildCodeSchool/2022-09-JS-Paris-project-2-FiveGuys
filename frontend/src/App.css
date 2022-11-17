@@ -1,11 +1,11 @@
 @font-face {
   font-family: "DeathStar";
-  src: url("./fonts/DeathStar.otf") format("opentype");
+  src: url("./style/fonts/DeathStar.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("./fonts/Ubuntu.ttf") format("truetype");
+  src: url("./style/fonts/Ubuntu.ttf") format("truetype");
 }
 
 :root {

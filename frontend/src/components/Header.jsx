@@ -1,41 +1,26 @@
 import React from "react";
-import "../style/Header.css";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
-function Header({ currentPage, handleMenuItem }) {
+function Header() {
   return (
     <div className="header">
       <div className="header-list">
         <ul>
-          <li className={currentPage === "news" ? "active" : "header-item"}>
-            <button
-              className="header-button"
-              type="button"
-              onClick={() => handleMenuItem("news")}
-            >
-              News
-            </button>
+          <li>
+            <Link to="/news">News</Link>
           </li>
-          <li className={currentPage === "contact" ? "active" : "header-item"}>
-            <button
-              className="header-button"
-              type="button"
-              onClick={() => handleMenuItem("contact")}
-            >
-              Contact
-            </button>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
-          <li className={currentPage === "about" ? "active" : "header-item"}>
-            <button
-              className="header-button"
-              type="button"
-              onClick={() => handleMenuItem("about")}
-            >
-              About Us
-            </button>
+          <li>
+            <Link to="/aboutUs">About Us</Link>
           </li>
         </ul>
       </div>
-      <div className="header-title">Meteo Wars</div>
+      <div className="header-title">
+        <Link to="/"> Meteo Wars</Link>
+      </div>
     </div>
   );
 }

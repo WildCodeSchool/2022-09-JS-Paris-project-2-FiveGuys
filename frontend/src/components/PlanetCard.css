@@ -1,0 +1,151 @@
+/************************ LEFT PART *************************/
+
+.page {
+  display: flex;
+  outline: 3px solid;
+  outline-color: var(--primary-color);
+  background-color: rgba(128, 128, 128, 0.85);
+  border-radius: var(--border-radius);
+  height: 80vh;
+  width: 85vw;
+  position: absolute;
+}
+
+.page-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.benjamin-button {
+  padding: 5% 10% 5% 10%;
+}
+
+.calendar-arrow {
+  background-color: transparent;
+  border-style: none;
+  color: var(--light-color);
+  font-size: 150%;
+}
+
+.calendar-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.planet-card-left {
+  width: 50%;
+  height: 100%;
+}
+
+.planet-card-right {
+  width: 50%;
+  height: 100%;
+}
+
+.temperature-and-hour {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  padding-left: 2%;
+  padding-top: 2%;
+  font-size: 170%;
+}
+
+.temperature-and-hour div {
+  justify-content: space-around;
+  width: 50%;
+}
+
+.weather-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-icon img {
+  width: 28%;
+}
+
+.weatherName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+  font-size: 1.8rem;
+  font-family: var(--text-font);
+}
+
+.weather-spec-icon {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+.weather-spec-icon img {
+  width: 8%;
+}
+
+.weather-spec-data {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/************************ RIGHT PART *************************/
+
+.planet-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planet-card-right img {
+  max-height: 55%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.planet-card-right p {
+  height: 40%;
+}
+
+.planet-card-right button {
+  padding: 8px;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+#container-text-right {
+  overflow: scroll;
+  text-align: justify;
+  font-size: 0.8rem;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.text-right {
+  height: 100%;
+}
+
+.right-button {
+  margin-bottom: 20px;
+}
+
+.right-button p {
+  margin-right: 10px;
+  margin-left: 10px;
+}

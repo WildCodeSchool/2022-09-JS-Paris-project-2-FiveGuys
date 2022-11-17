@@ -1,11 +1,38 @@
 import axios from "axios";
 
-function fetchData(data) {
-  return axios
-    .get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${data.lat}&longitude=${data.long}&daily=weathercode&timezone=Europe%2FBerlin`
-    )
-    .then((res) => res.data);
-}
+const fetchFunctions = {
+  fetchData(lat, long, isShort) {
+    return axios
+      .get("https://api.open-meteo.com/v1/forecast?", {
+        params: {
+          latitude: lat,
+          longitude: long,
 
-export default fetchData;
+          daily: isShort
+            ? ["weathercode", "temperature_2m_max"]
+            : [
+                "weathercode",
+                "temperature_2m_max",
+                "temperature_2m_min",
+                "sunrise",
+                "sunset",
+                "precipitation_sum",
+                "rain_sum",
+                "showers_sum",
+                "snowfall_sum",
+                "windspeed_10m_max",
+                "winddirection_10m_dominant",
+              ],
+          timezone: "Europe/Berlin",
+        },
+      })
+      .then((res) => res.data);
+  },
+  fetchStarWars(idApi) {
+    return axios
+      .get(`https://swapi.dev/api/planets/${idApi}`)
+      .then((res) => res.data);
+  },
+};
+
+export default fetchFunctions;

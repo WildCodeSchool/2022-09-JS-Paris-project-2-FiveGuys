@@ -11,6 +11,7 @@
   align-items: center;
   text-align: center;
   width: 100vw;
+  height: 3rem;
 }
 
 .header-list {
@@ -24,6 +25,10 @@
   font-size: 2rem;
   display: flex;
   justify-content: center;
+}
+.header-title a {
+  text-decoration: none;
+  color: var(--light-color);
 }
 
 ul {
@@ -39,7 +44,8 @@ ul {
   justify-content: space-evenly;
 }
 
-.header-button {
+ul a {
+  text-decoration: none;
   color: var(--light-color);
   border: none;
   background: none;
@@ -49,7 +55,7 @@ ul {
   padding: 5px 15px 5px 15px;
 }
 
-.header-button:hover {
+ul a:hover {
   color: var(--dark-color);
   background-color: var(--primary-color);
   border-radius: var(--border-radius);
