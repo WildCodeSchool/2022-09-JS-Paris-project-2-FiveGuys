@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import ConnexionContext from "../contexts/connexionContext";
 
 function Header() {
+  const { userInfo } = useContext(ConnexionContext);
+
   return (
     <div className="header">
       <div className="header-list">
@@ -15,6 +18,13 @@ function Header() {
           </li>
           <li>
             <Link to="/aboutUs">About Us</Link>
+          </li>
+          <li>
+            <Link to="/account">
+              {Object.keys(userInfo.info).length === 0
+                ? "sign in"
+                : `Welcome ${userInfo.info?.surname}!`}
+            </Link>
           </li>
         </ul>
       </div>

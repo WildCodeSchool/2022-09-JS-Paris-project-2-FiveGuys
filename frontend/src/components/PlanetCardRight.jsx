@@ -19,6 +19,9 @@ function PlanetCardRight() {
           Would like to know more ?
         </button>
       </Link>
+      <Link to={`/planets/${planet}/comments`}>
+        <button type="button">comments</button>
+      </Link>
     </div>
   );
 }

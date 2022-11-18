@@ -10,6 +10,12 @@ import PlanetInfo from "./components/PlanetInfo";
 import planets from "./services/planetData";
 import PlanetCard from "./components/PlanetCard";
 import Page404 from "./components/Page404";
+import { ConnexionContextProvider } from "./contexts/connexionContext";
+import SignIn from "./pages/SignIn";
+import Confirmation from "./pages/Confirmation";
+import Connexion from "./pages/Connexion";
+import Account from "./pages/Account";
+import Comments from "./pages/Comments";
 
 function App() {
   const [initial, setInitial] = useState({});
@@ -28,14 +34,24 @@ function App() {
       <div className="twinkling" />
       <div className="others">
         <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="planets/:planet" element={<PlanetCard />} />
-            <Route path="planets/:planet/info" element={<PlanetInfo />} />
-            <Route path="/error_404" element={<Page404 />} />
-          </Routes>
-          <Map initial={initial} />
-          <Footer />
+          <ConnexionContextProvider>
+            <Header />
+            <Routes>
+              <Route path="planets/:planet" element={<PlanetCard />} />
+              <Route path="planets/:planet/comments" element={<Comments />} />
+              <Route path="account/connexion" element={<Connexion />} />
+              <Route path="account/signIn" element={<SignIn />} />
+              <Route
+                path="account/confirmation/:action"
+                element={<Confirmation />}
+              />
+              <Route path="account/*" element={<Account />} />
+              <Route path="planets/:planet/info" element={<PlanetInfo />} />
+              <Route path="/error_404" element={<Page404 />} />
+            </Routes>
+            <Map initial={initial} />
+            <Footer />
+          </ConnexionContextProvider>
         </BrowserRouter>
       </div>
     </div>
