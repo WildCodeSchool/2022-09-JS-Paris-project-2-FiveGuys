@@ -10,7 +10,7 @@ function Header() {
       <div className="header-list">
         <ul>
           <li>
-            <Link to="/news">News</Link>
+            <Link to="/Credits">Credits</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

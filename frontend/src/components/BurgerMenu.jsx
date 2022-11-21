@@ -20,17 +20,15 @@ function BurgerMenu() {
 
   return (
     <div className="burger">
-      <nav>
-        <button type="button" className="burger-menu" onClick={updateMenu}>
-          <div className={burgerClass}> </div>
-          <div className={burgerClass}> </div>
-          <div className={burgerClass}> </div>
-        </button>
-      </nav>
+      <button type="button" className="burger-menu" onClick={updateMenu}>
+        <div className={burgerClass}> </div>
+        <div className={burgerClass}> </div>
+        <div className={burgerClass}> </div>
+      </button>
       <button type="button" className={menuClass}>
         <div className="classname-link">
           <div className="link">
-            <Link to="/news">News</Link>
+            <Link to="/credits">Credits</Link>
           </div>
           <div className="link">
             <Link to="/contact">Contact</Link>

@@ -10,6 +10,7 @@ import PlanetInfo from "./components/PlanetInfo";
 import planets from "./services/planetData";
 import PlanetCard from "./components/PlanetCard";
 import AboutUs from "./components/AboutUs";
+import Credit from "./components/Credit";
 
 function App() {
   const [initial, setInitial] = useState({});
@@ -33,6 +34,7 @@ function App() {
             <Route path="planets/:planet" element={<PlanetCard />} />
             <Route path="planets/:planet/info" element={<PlanetInfo />} />
             <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/credits" element={<Credit />} />
           </Routes>
           <Map initial={initial} />
           <Footer />
