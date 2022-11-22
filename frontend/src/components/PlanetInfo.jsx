@@ -21,7 +21,7 @@ function PlanetInfo() {
 
   return (
     <div className="page-container">
-      <div className="page">
+      <div className="page-info">
         <div className="planet-info-left">
           <Title>{planet}</Title>
           <img
