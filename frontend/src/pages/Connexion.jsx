@@ -42,7 +42,7 @@ function Connexion() {
 
   return (
     <div className="page-container connexion">
-      <div className="page connexion ">
+      <div className="page connexion">
         <Title>Connexion</Title>
         {!isResetMode ? (
           <>

@@ -11,6 +11,9 @@ import FormHelpers from "../connexionHelpers/formHelpers";
 import FormFields from "../connexionHelpers/formFields";
 import FormTextInputList from "../components/FormTextInputList";
 import FormSubmitter from "../connexionHelpers/formSubmitter";
+import CrossIcon from "../components/CrossIcon";
+import "../components/Page.css";
+import "./SignUp.css";
 
 function SignIn() {
   const { userInfo } = useContext(ConnexionContext);
@@ -47,54 +50,59 @@ function SignIn() {
   };
 
   return (
-    <div className="page">
-      <Title>Sign up</Title>
-      <label htmlFor="civ">Gender * :</label>
-      <br />
-      <div className="dropdown">
-        {!signInData.gender
-          ? "Select : "
-          : signInData.gender === 1
-          ? "Mr"
-          : signInData.gender === 2
-          ? "Mrs"
-          : ""}
-        <div className="dropdown-content">
-          {["Male", "Female", "Other"].map((gend, index) => (
-            <p
-              onClick={(e) =>
-                FormHelpers.assignGender(index + 1, setSignInData, signInData)
-              }
-            >
-              {gend}
-            </p>
-          ))}
+    <div className="page-container">
+      <div className="page connexion">
+        <CrossIcon />
+        <Title>Sign up</Title>
+
+        <label htmlFor="civ">Gender * :</label>
+        <br />
+        <div className="dropdown">
+          {!signInData.gender
+            ? "Select : "
+            : signInData.gender === 1
+            ? "Mr"
+            : signInData.gender === 2
+            ? "Mrs"
+            : ""}
+          <div className="dropdown-content">
+            {["Male", "Female", "Other"].map((gend, index) => (
+              <p
+                onClick={(e) =>
+                  FormHelpers.assignGender(index + 1, setSignInData, signInData)
+                }
+              >
+                {gend}
+              </p>
+            ))}
+          </div>
         </div>
+
+        <FormTextInputList
+          fields={fieldsToCheck}
+          data={signInData}
+          setData={setSignInData}
+          isEditMode={false}
+        />
+        <i>* required</i>
+        <br />
+        <button
+          type="button"
+          onClick={() =>
+            isFormValid() &&
+            FormSubmitter.register(
+              userInfo.auth,
+              signInData.mail.value,
+              signInData.password.value,
+              setSignInData,
+              signInData,
+              navigate
+            )
+          }
+        >
+          Sign Up
+        </button>
       </div>
-      <FormTextInputList
-        fields={fieldsToCheck}
-        data={signInData}
-        setData={setSignInData}
-        isEditMode={false}
-      />
-      <i>* required</i>
-      <br />
-      <button
-        type="button"
-        onClick={() =>
-          isFormValid() &&
-          FormSubmitter.register(
-            userInfo.auth,
-            signInData.mail.value,
-            signInData.password.value,
-            setSignInData,
-            signInData,
-            navigate
-          )
-        }
-      >
-        Sign Up
-      </button>
     </div>
   );
 }

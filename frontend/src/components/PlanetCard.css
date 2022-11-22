@@ -1,7 +1,8 @@
 /************************ LEFT PART *************************/
 
-.page.page-planet-card {
+.page-planet-card {
   display: flex;
+  flex-direction: row;
   width: 85vw;
   position: absolute;
   -webkit-appearance: none;
@@ -18,15 +19,6 @@
   font-size: 3.6rem;
   text-align: center;
   font-family: var(--title-font);
-}
-
-.page-container {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 6rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .calendar-container {

@@ -1,6 +1,6 @@
-/* .page {
-  background-color: rgba(0, 0, 0, 0.7);
-} */
+.page.error-page {
+  background-color: rgba(0, 0, 0, 0.63);
+}
 
 .page-error {
   padding: 1rem;

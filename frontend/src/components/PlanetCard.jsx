@@ -4,6 +4,7 @@ import PlanetCardRight from "./PlanetCardRight";
 import planets from "../services/planetData";
 import "./PlanetCard.css";
 import CrossIcon from "./CrossIcon";
+import "./Page.css";
 
 function PlanetCard() {
   const [planetData, setPlanetData] = useState(planets);

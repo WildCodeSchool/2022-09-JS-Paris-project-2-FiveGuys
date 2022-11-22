@@ -4,6 +4,7 @@ import fetchFunctions from "../services/Fetch";
 import planets from "../services/planetData";
 import "./PlanetInfo.css";
 import "./PlanetCard.css";
+import "./Page.css";
 import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
 import PlanetFlag from "./PlanetFlag";
@@ -22,7 +23,7 @@ function PlanetInfo() {
 
   return (
     <div className="page-container">
-      <div className="page">
+      <div className="page planet-info">
         <CrossIcon />
         <div className="planet-info-left">
           <Title>{planet}</Title>
