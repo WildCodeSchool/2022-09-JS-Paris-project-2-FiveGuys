@@ -7,6 +7,7 @@ import FormFields from "../connexionHelpers/formFields";
 import FormSubmitter from "../connexionHelpers/formSubmitter";
 import FormHelpers from "../connexionHelpers/formHelpers";
 import FormTextInputList from "../components/FormTextInputList";
+import "./Connexion.css";
 
 function Connexion() {
   const navigate = useNavigate();
@@ -40,53 +41,60 @@ function Connexion() {
   };
 
   return (
-    <div className="page">
-      <Title>Connexion</Title>
-      {!isResetMode ? (
-        <>
-          <FormTextInputList
-            fields={fieldsToCheck}
-            data={connexionData}
-            setData={setConnexionData}
-            isEditMode={false}
-          />
-          <i>* required</i>
-          <br />
-          <span className="spanDisplayMsg">{connexionData.connexionError}</span>
-          <button
-            type="button"
-            onClick={() =>
-              FormHelpers.allowValidation(fieldsToCheck, true) && onFormSubmit()
-            }
-          >
-            Log in
-          </button>
-          <br />
-          <i>password forgotten ?</i>
-          <br />
-          <button type="button" onClick={() => setIsResetMode(true)}>
-            Reinit password
-          </button>
-        </>
-      ) : (
-        <>
-          <FormTextInputList
-            fields={[fieldsToCheck[0]]}
-            data={connexionData}
-            setData={setConnexionData}
-            isEditMode={false}
-          />
-          <button type="button" onClick={() => handleReinitPassword()}>
-            Reinit password
-          </button>
-          <button type="button" onClick={() => setIsResetMode(false)}>
-            Back to connexion
-          </button>
-        </>
-      )}
-      <button type="button" onClick={() => navigate("/account/")}>
-        Back to account
-      </button>
+    <div className="page-container connexion">
+      <div className="page connexion ">
+        <Title>Connexion</Title>
+        {!isResetMode ? (
+          <>
+            <FormTextInputList
+              fields={fieldsToCheck}
+              data={connexionData}
+              setData={setConnexionData}
+              isEditMode={false}
+            />
+            <i id="required">* required</i>
+            <br />
+            <div className="spanDisplayMsg-area">
+              <span className="spanDisplayMsg">
+                {connexionData.connexionError}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() =>
+                FormHelpers.allowValidation(fieldsToCheck, true) &&
+                onFormSubmit()
+              }
+            >
+              Log in
+            </button>
+            <br />
+            <i className="password-forgotten">password forgotten ?</i>
+            <br />
+            <button type="button" onClick={() => setIsResetMode(true)}>
+              Reinit password
+            </button>
+          </>
+        ) : (
+          <>
+            <FormTextInputList
+              fields={[fieldsToCheck[0]]}
+              data={connexionData}
+              setData={setConnexionData}
+              isEditMode={false}
+            />
+            <button type="button" onClick={() => handleReinitPassword()}>
+              Reset password
+            </button>
+            <button type="button" onClick={() => setIsResetMode(false)}>
+              Back to connexion
+            </button>
+          </>
+        )}
+        <button type="button" onClick={() => navigate("/account/")}>
+          Back to account
+        </button>
+      </div>
     </div>
   );
 }

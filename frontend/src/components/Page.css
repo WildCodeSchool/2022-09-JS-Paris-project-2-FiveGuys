@@ -3,8 +3,8 @@
   outline-color: var(--primary-color);
   background-color: rgba(128, 128, 128, 0.85);
   border-radius: var(--border-radius);
-  height: 80vh;
-  width: 85vw;
+  height: 84vh;
+  width: 90vw;
   position: absolute;
 }
 
@@ -13,4 +13,29 @@
   font-size: 3.6rem;
   text-align: center;
   font-family: var(--title-font);
+}
+
+.cross {
+  position: absolute;
+  z-index: 100;
+  width: 2em;
+  height: 2rem;
+  right: 1rem;
+  top: 1rem;
+}
+
+.cross-bar:first-child {
+  width: 2rem;
+  height: 0.3rem;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  transform: rotate(45deg) translate(0.2em, 0.2em);
+}
+
+.cross-bar:nth-child(2) {
+  width: 2rem;
+  height: 0.3rem;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  transform: rotate(135deg) translate(0em, 0em);
 }

@@ -11,7 +11,7 @@
   align-items: center;
   text-align: center;
   width: 100vw;
-  height: 3rem;
+  height: 5rem;
 }
 
 .header-list {
@@ -22,7 +22,8 @@
 .header-title {
   color: var(--light-color);
   font-family: var(--title-font);
-  font-size: 2rem;
+  font-size: 4rem;
+  letter-spacing: 2px;
   display: flex;
   justify-content: center;
 }
@@ -31,7 +32,7 @@
   color: var(--light-color);
 }
 
-ul {
+.header-list ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -44,26 +45,61 @@ ul {
   justify-content: space-evenly;
 }
 
-ul a {
+.header-list li {
+  cursor: pointer, url(../public/falcon.png), 3px;
+}
+
+.header-list #signup-button {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  margin-right: 15%;
+}
+
+.header-list #signup-button a {
+  border: solid 3px var(--primary-color);
+  border-radius: 20px;
+}
+
+.header-list a {
+  position: relative;
   text-decoration: none;
   color: var(--light-color);
   border: none;
   background: none;
   font-family: var(--text-font);
   font-weight: 600;
-  cursor: pointer;
+
   padding: 5px 15px 5px 15px;
 }
 
-ul a:hover {
-  color: var(--dark-color);
-  background-color: var(--primary-color);
+.header-list a::before {
+  position: absolute;
+  background: var(--primary-color);
   border-radius: var(--border-radius);
+  content: "";
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.header-list a:hover::before {
+  transform: scaleX(1);
+  border-radius: 20px;
+  transform-origin: left;
+}
+
+.header-list a:hover {
+  color: var(--dark-color);
+  border-radius: 20px;
   padding: 5px 15px 5px 15px;
 }
 
-.active {
-  color: var(--dark-color);
+.header-list li .active {
+  border-radius: 20px;
   background-color: var(--primary-color);
-  border-radius: var(--border-radius);
+  color: var(--dark-color);
+  box-shadow: var(--box-shadow);
 }

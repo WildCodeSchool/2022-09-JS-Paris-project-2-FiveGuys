@@ -11,28 +11,27 @@
   text-align: center;
   font-family: var(--text-font);
   color: var(--light-color);
-  padding: 1rem;
+  margin: 1rem;
 }
 
 .popover-container img {
-  width: 75%;
+  width: 50%;
 }
 
 .popover-title {
   font-family: var(--title-font);
   letter-spacing: 0.1rem;
-  font-size: 1.4rem;
-  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0.4rem;
 }
 
-.popover-icon {
-  margin-top: 1.5rem;
+.popover-container p {
+  font-family: var(--text-font);
+  font-size: 1.3rem;
+  margin: 0.7rem;
 }
 
 .popover-hour-time {
   display: flex;
   justify-content: space-around;
-  margin-top: 0.5rem;
-  font-weight: 500;
-  font-size: 1.3rem;
 }

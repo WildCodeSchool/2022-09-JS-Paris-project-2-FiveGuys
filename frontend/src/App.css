@@ -45,8 +45,14 @@ body {
   border-radius: var(--border-radius);
 }
 
+.button {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
 /* --------- MAP --------- */
 #map {
   width: 100vw;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 10rem);
 }

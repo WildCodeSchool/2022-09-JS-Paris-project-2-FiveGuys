@@ -1,7 +1,14 @@
+/* .page {
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
 .page-error {
-  padding: 1em;
-  color: #eee;
-  font-size: 1em;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--light-color);
   line-height: 1;
   text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
   letter-spacing: 0.125em;
@@ -11,17 +18,56 @@
   animation-direction: alternate;
 }
 
-h1 {
+@keyframes textflicker {
+  from {
+    text-shadow: 5px 0 0 #ea36af, -5px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
+
+.page-error h1 {
   font-size: 8em;
   font-family: var(--title-font);
   letter-spacing: 5px;
 }
 
-@keyframes textflicker {
+.page-error h2 {
+  font-family: var(--title-font);
+  color: var(--primary-color);
+  font-size: 4rem;
+}
+
+.page-error h3 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.page-error p {
+  font-family: var(--text-font);
+  color: var(--primary-color);
+  font-size: 1em;
+}
+
+.page-error img {
+  width: 20%;
+  box-shadow: 0.04rem 0 0.04rem #ea36af, -0.125rem 0 0.04rem #75fa69;
+  border-radius: 300px;
+  animation-name: imgflicker;
+  animation-duration: 0.01s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  filter: grayscale(40%);
+}
+
+@keyframes imgflicker {
   from {
-    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    box-shadow: 0.5px 0 0 #ea36af, -2px 0 0 #75fa69;
+    margin-left: 0.1rem;
   }
   to {
-    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    box-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    margin-right: 0.1rem;
   }
 }
