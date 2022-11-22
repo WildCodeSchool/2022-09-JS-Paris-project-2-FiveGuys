@@ -2,11 +2,6 @@
 
 .page {
   display: flex;
-  outline: 3px solid;
-  outline-color: var(--primary-color);
-  background-color: rgba(128, 128, 128, 0.85);
-  border-radius: var(--border-radius);
-  height: 80vh;
   width: 85vw;
   position: absolute;
 }
@@ -34,6 +29,7 @@
 
 .benjamin-button {
   padding: 5% 10% 5% 10%;
+  font-family: var(--text-font);
 }
 
 .calendar-arrow {
@@ -111,6 +107,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .planet-card-right img {
@@ -126,6 +123,13 @@
 .planet-card-right button {
   padding: 8px;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.planet-card-right button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  cursor: pointer;
 }
 
 #container-text-right {
@@ -134,10 +138,15 @@
   font-size: 0.8rem;
   padding-left: 6%;
   padding-right: 6%;
+  height: 30%;
+  width: 60%;
+  /* border: solid 2px var(--light-color); */
+  border-radius: var(--border-radius);
 }
 
 .text-right {
   height: 100%;
+  margin-top: 0.7rem;
 }
 
 .right-button {

@@ -15,11 +15,13 @@ const weatherCodeMapping = {
 };
 
 const Weathername = (code) => {
-  return Object.entries(weatherCodeMapping).map(([key, value]) => {
-    return (
-      value.find((el) => el === code) && key.replace("_", " ").toUpperCase()
-    );
+  if (code === undefined) {
+    return "";
+  }
+  const res = Object.entries(weatherCodeMapping).find(([, value]) => {
+    return value.includes(code);
   });
+  return res[0].replace("_", " ").toUpperCase();
 };
 
 export default Weathername;
