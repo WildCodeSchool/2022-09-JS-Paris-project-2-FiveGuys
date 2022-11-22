@@ -1,0 +1,39 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--light-color);
+  /* width: 50%;
+  height: 70%; */
+}
+
+button {
+  padding: 8px;
+  border-radius: 0.5rem;
+}
+
+h3 {
+  padding-top: 6%;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.page-title {
+  padding-top: 0;
+}
+
+a:link,
+a:active,
+a:hover,
+a:visited {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-text {
+  font-size: 0.9rem;
+  font-style: var(--text-font);
+  font-weight: 600;
+}
