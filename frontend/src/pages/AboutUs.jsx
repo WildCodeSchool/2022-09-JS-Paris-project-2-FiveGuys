@@ -1,12 +1,15 @@
 import React from "react";
 import "./AboutUs.css";
+import CrossIcon from "../components/CrossIcon";
+import Title from "../components/Title";
 
 function AboutUs() {
   return (
-    <div className="aboutUs-global">
-      <div className="aboutUs-container">
+    <div className="page-container aboutUs-container">
+      <div className="page aboutUs-global">
+        <CrossIcon />
         <div className="aboutUs-title">
-          <h1>About Us</h1>
+          <Title>About Us</Title>
         </div>
         <div className="us-container">
           <div className="Just-the-five-of-us">

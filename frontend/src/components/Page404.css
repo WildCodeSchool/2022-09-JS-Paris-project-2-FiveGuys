@@ -1,8 +1,9 @@
 .page.error-page {
   background-color: rgba(0, 0, 0, 0.63);
+  justify-content: center;
 }
 
-.page-error {
+.page-error-content {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -27,30 +28,30 @@
   }
 }
 
-.page-error h1 {
+.page-error-content h1 {
   font-size: 8em;
   font-family: var(--title-font);
   letter-spacing: 5px;
 }
 
-.page-error h2 {
+.page-error-content h2 {
   font-family: var(--title-font);
   color: var(--primary-color);
   font-size: 4rem;
 }
 
-.page-error h3 {
+.page-error-content h3 {
   font-size: 1.5em;
   text-align: center;
 }
 
-.page-error p {
+.page-error-content p {
   font-family: var(--text-font);
   color: var(--primary-color);
   font-size: 1em;
 }
 
-.page-error img {
+.page-error-content img {
   width: 20%;
   box-shadow: 0.04rem 0 0.04rem #ea36af, -0.125rem 0 0.04rem #75fa69;
   border-radius: 300px;

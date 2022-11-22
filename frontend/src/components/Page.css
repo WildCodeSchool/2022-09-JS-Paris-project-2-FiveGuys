@@ -49,3 +49,9 @@
   border-radius: var(--border-radius);
   transform: rotate(135deg) translate(0em, 0em);
 }
+
+@media screen and (max-width: 414px) {
+  .page-title {
+    font-size: 2rem;
+  }
+}

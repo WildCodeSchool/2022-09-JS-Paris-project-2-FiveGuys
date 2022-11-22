@@ -10,7 +10,7 @@ export default function Page404() {
       <div className="page error-page">
         <CrossIcon />
 
-        <div className="page-error">
+        <div className="page-error-content">
           <h1> 404 ERROR </h1>
           <h2> ACCESS DENIED </h2>
           <h3>

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import BurgerMenu from "./BurgerMenu";
 import ConnexionContext from "../contexts/connexionContext";
+import BurgerMenu from "./BurgerMenu";
 
 function Header() {
   const { userInfo } = useContext(ConnexionContext);
@@ -14,9 +14,6 @@ function Header() {
         <ul>
           <li>
             <Link to="/aboutUs">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
           </li>
           <li>
             <Link to="/credits">Credits</Link>
