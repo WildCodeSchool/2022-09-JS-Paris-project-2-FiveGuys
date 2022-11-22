@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./Calendar.css";
 
-function Calendar({ setCurrentDay }) {
+function Calendar({ setCurrentDay, currentDay }) {
   const current = new Date();
   const [daysIndex, setDaysIndex] = useState(0);
   const days = [
@@ -29,7 +30,11 @@ function Calendar({ setCurrentDay }) {
           .map((day, index) => {
             return (
               <button
-                className="benjamin-button"
+                className={
+                  currentDay === index
+                    ? "benjamin-button active"
+                    : "benjamin-button"
+                }
                 onClick={() => setCurrentDay(index)}
                 type="button"
                 key={day}

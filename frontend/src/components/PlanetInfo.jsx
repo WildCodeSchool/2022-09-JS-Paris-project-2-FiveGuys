@@ -9,6 +9,7 @@ import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
 import PlanetFlag from "./PlanetFlag";
 import PlanetPeople from "./PlanetPeople";
+import CrossIcon from "./CrossIcon";
 
 function PlanetInfo() {
   const { planet } = useParams();
@@ -22,7 +23,8 @@ function PlanetInfo() {
 
   return (
     <div className="page-container">
-      <div className="page">
+      <div className="page planet-info">
+        <CrossIcon />
         <div className="planet-info-left">
           <Title>{planet}</Title>
           <img

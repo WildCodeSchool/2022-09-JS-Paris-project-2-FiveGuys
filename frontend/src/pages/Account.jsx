@@ -10,6 +10,9 @@ import { auth } from "../firebase-config";
 import FormFields from "../connexionHelpers/formFields";
 import FormTextInputList from "../components/FormTextInputList";
 import FormHelpers from "../connexionHelpers/formHelpers";
+import CrossIcon from "../components/CrossIcon";
+import "../components/Page.css";
+import "./Account.css";
 
 function Account() {
   const navigate = useNavigate();
@@ -45,67 +48,88 @@ function Account() {
   }, [auth]);
 
   return (
-    <div className="page">
-      {userInfo.info.surname && auth.currentUser ? (
-        <>
-          <Title>Account</Title>
-          <h3>{`Hi ${userInfo.info.surname}, may the Force be with you.`} </h3>
-          <button type="button" onClick={() => handleLogout()}>
-            Log out
-          </button>
-          <Link to="accountData/">
-            <button type="button">Modify account data</button>
-          </Link>
-          <button type="button" onClick={() => handleDeleteAccount()}>
-            Delete account
-          </button>
-        </>
-      ) : !userInfo.info.surname && auth.currentUser ? (
-        <>
-          <Title>Account</Title>
-          <h4>LOADING FROM IMPERIAL DATABASE</h4>
-        </>
-      ) : (
-        <>
-          <Title>Identification</Title>
-          <h3>Log in</h3>
-          <Link to="connexion">
-            <button type="button">Connexion</button>
-          </Link>
-          <h3>Not yet registered ?</h3>
-          <Link to="signIn">
-            <button type="button">Sign in</button>
-          </Link>
-        </>
-      )}
-      {params["*"] === "accountData/" && (
-        <>
-          <FormTextInputList
-            fields={fieldsToCheck}
-            data={signInData}
-            setData={setSignInData}
-            isEditMode
-          />
-          <button
-            disabled={
-              !FormHelpers.allowModifications(fieldsToCheck, userInfo.info)
-            }
-            type="button"
-            onClick={() =>
-              FormSubmitter.updateUserData(
-                auth.currentUser.uid,
-                FormHelpers.getModifiedFields(fieldsToCheck),
-                navigate
-              )
-            }
-          >
-            Save changes
-          </button>
-          <button type="button" onClick={() => navigate("/account")}>
-            Cancel
-          </button>
-        </>
-      )}
+    <div div className="page-container account-page">
+      <div className="page account-content">
+        <CrossIcon />
+        {userInfo.info.surname && auth.currentUser ? (
+          <>
+            <Title>Welcome {userInfo.info?.surname}</Title>
+            <h3 className="account-content-h3">May the Force be with you.</h3>
+            <div className="account-content-buttons">
+              <button
+                className="account-content-button"
+                type="button"
+                onClick={() => handleLogout()}
+              >
+                Log out
+              </button>
+              <Link to="accountData/">
+                <button className="account-content-button" type="button">
+                  Modify account data
+                </button>
+              </Link>
+              <button
+                className="account-content-button"
+                type="button"
+                onClick={() => handleDeleteAccount()}
+              >
+                Delete account
+              </button>
+            </div>
+          </>
+        ) : !userInfo.info.surname && auth.currentUser ? (
+          <>
+            <Title>Account</Title>
+            <h4>LOADING FROM IMPERIAL DATABASE</h4>
+          </>
+        ) : (
+          <>
+            <Title>Sign up</Title>
+            <div className="account-signup-container">
+              <h3>Log in</h3>
+              <Link to="connexion">
+                <button className="account-content-button" type="button">
+                  Connexion
+                </button>
+              </Link>
+              <h3>Not yet registered ?</h3>
+              <Link to="signup">
+                <button className="account-content-button" type="button">
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          </>
+        )}
+        {params["*"] === "accountData/" && (
+          <>
+            <FormTextInputList
+              fields={fieldsToCheck}
+              data={signInData}
+              setData={setSignInData}
+              isEditMode
+            />
+            <button
+              disabled={
+                !FormHelpers.allowModifications(fieldsToCheck, userInfo.info)
+              }
+              type="button"
+              onClick={() =>
+                FormSubmitter.updateUserData(
+                  auth.currentUser.uid,
+                  FormHelpers.getModifiedFields(fieldsToCheck),
+                  navigate
+                )
+              }
+            >
+              Save changes
+            </button>
+            <button type="button" onClick={() => navigate("/account")}>
+              Cancel
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
