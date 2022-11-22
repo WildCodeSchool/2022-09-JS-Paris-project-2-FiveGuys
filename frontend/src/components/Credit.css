@@ -64,6 +64,7 @@
     perspective: 300px;
     overflow-y: scroll;
     overflow: hidden;
+    justify-content: center;
   }
 
   .crawl > p {

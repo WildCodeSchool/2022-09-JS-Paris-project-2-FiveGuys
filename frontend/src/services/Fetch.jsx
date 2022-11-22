@@ -30,8 +30,12 @@ const fetchFunctions = {
   },
   fetchStarWars(idApi) {
     return axios
-      .get(`https://swapi.dev/api/planets/${idApi}`)
+      .get(`https://swapi.py4e.com/api/planets/${idApi}`)
       .then((res) => res.data);
+  },
+
+  fetchResidents(URL) {
+    return axios.get(URL).then((res) => res.data);
   },
 };
 

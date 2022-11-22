@@ -1,0 +1,28 @@
+.comment {
+  width: 80%;
+  background: green;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-header {
+  width: 95%;
+  background: red;
+}
+
+.comment-body {
+  width: 95%;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background: pink;
+}
+
+.comment-footer {
+  width: 95%;
+  background: salmon;
+}
