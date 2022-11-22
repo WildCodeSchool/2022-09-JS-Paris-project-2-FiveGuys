@@ -56,3 +56,10 @@ body {
   width: 100vw;
   height: calc(100vh - 10rem);
 }
+
+@media screen and (max-width: 414px) {
+  .total {
+    width: 100%;
+    height: 100%;
+  }
+}

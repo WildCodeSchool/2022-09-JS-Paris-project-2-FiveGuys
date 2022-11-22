@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PlanetCardLeft from "./PlanetCardLeft";
 import PlanetCardRight from "./PlanetCardRight";
 import planets from "../services/planetData";
-import "./Page.css";
 import "./PlanetCard.css";
 import CrossIcon from "./CrossIcon";
 

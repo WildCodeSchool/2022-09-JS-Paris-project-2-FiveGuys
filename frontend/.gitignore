@@ -24,3 +24,5 @@ firebase-config.jsx
 *.njsproj
 *.sln
 *.sw?
+
+firebase-config.jsx

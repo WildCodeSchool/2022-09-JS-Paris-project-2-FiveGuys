@@ -4,7 +4,6 @@ import fetchFunctions from "../services/Fetch";
 import planets from "../services/planetData";
 import "./PlanetInfo.css";
 import "./PlanetCard.css";
-import "./Page.css";
 import Title from "./Title";
 import weatherIcon from "../services/weatherIcon";
 import PlanetFlag from "./PlanetFlag";

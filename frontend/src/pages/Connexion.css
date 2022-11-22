@@ -1,4 +1,4 @@
-/* .page-container {
+.page-container {
   position: absolute;
   width: 100%;
   height: calc(100% - 6rem);
@@ -13,7 +13,7 @@
   align-items: center;
   height: 85%;
   width: 60%;
-} */
+}
 
 .formtext-Input-area {
   width: 100%;

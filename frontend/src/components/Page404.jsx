@@ -1,5 +1,4 @@
 import React from "react";
-import "./Page.css";
 import "./Page404.css";
 import Empire from "../../public/flags/Empire.png";
 import CrossIcon from "./CrossIcon";

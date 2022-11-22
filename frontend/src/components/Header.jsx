@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 import ConnexionContext from "../contexts/connexionContext";
 
 function Header() {
@@ -8,6 +9,7 @@ function Header() {
 
   return (
     <div className="header">
+      <BurgerMenu />
       <div className="header-list">
         <ul>
           <li>
