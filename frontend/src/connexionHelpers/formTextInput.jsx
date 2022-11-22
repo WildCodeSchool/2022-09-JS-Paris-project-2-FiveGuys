@@ -11,9 +11,13 @@ function FormTextInput({ data, setData, field, isEditMode }) {
     <div className="formtext-Input-area">
       <div className="label-area">
         <label htmlFor={field.name}>
-          {field.label} : {!data[field.name].isRequired && <i>- optional -</i>}
+          <h3>
+            {" "}
+            {field.label} :{" "}
+            {!data[field.name].isRequired && <i>- optional -</i>}
+          </h3>
         </label>
-        <br />
+
         <input
           placeholder={isEditMode ? userInfo.info[field.name] : ""}
           id={field.name}
@@ -27,17 +31,16 @@ function FormTextInput({ data, setData, field, isEditMode }) {
 
         <span className="spanValidation">
           {data[field.name].isValid
-            ? " ✓"
+            ? "✓"
             : !data[field.name].isValid && data[field.name].value
-            ? "✕"
+            ? "✕ "
             : ""}
         </span>
       </div>
-      {/* <br /> */}
+
       <span className="spanDisplayMsg">
         {data[field.name].touched && data[field.name].displayMsg}
       </span>
-      <br />
     </div>
   );
 }

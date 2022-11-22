@@ -8,6 +8,8 @@ import FormSubmitter from "../connexionHelpers/formSubmitter";
 import FormHelpers from "../connexionHelpers/formHelpers";
 import FormTextInputList from "../components/FormTextInputList";
 import "./Connexion.css";
+import "../components/Page.css";
+import CrossIcon from "../components/CrossIcon";
 
 function Connexion() {
   const navigate = useNavigate();
@@ -43,38 +45,46 @@ function Connexion() {
   return (
     <div className="page-container connexion">
       <div className="page connexion">
+        <CrossIcon />
         <Title>Connexion</Title>
         {!isResetMode ? (
-          <>
+          <div className="connexion-form-text-input">
             <FormTextInputList
               fields={fieldsToCheck}
               data={connexionData}
               setData={setConnexionData}
               isEditMode={false}
             />
-            <i id="required">* required</i>
-            <br />
+            {/* <i id="required">* required</i> */}
+
             <div className="spanDisplayMsg-area">
               <span className="spanDisplayMsg">
                 {connexionData.connexionError}
               </span>
             </div>
-            <button
-              type="button"
-              onClick={() =>
-                FormHelpers.allowValidation(fieldsToCheck, true) &&
-                onFormSubmit()
-              }
-            >
-              Log in
-            </button>
-            <br />
-            <i className="password-forgotten">password forgotten ?</i>
-            <br />
-            <button type="button" onClick={() => setIsResetMode(true)}>
-              Reinit password
-            </button>
-          </>
+            <div className="connexion-form-buttons-container">
+              <button
+                className="connexion-form-button"
+                type="button"
+                onClick={() =>
+                  FormHelpers.allowValidation(fieldsToCheck, true) &&
+                  onFormSubmit()
+                }
+              >
+                Log in
+              </button>
+
+              <i className="password-forgotten">Password Forgotten ?</i>
+
+              <button
+                className="connexion-form-button"
+                type="button"
+                onClick={() => setIsResetMode(true)}
+              >
+                Reset password
+              </button>
+            </div>
+          </div>
         ) : (
           <>
             <FormTextInputList
@@ -83,15 +93,29 @@ function Connexion() {
               setData={setConnexionData}
               isEditMode={false}
             />
-            <button type="button" onClick={() => handleReinitPassword()}>
+
+            <button
+              className="connexion-form-button"
+              type="button"
+              onClick={() => handleReinitPassword()}
+            >
               Reset password
             </button>
-            <button type="button" onClick={() => setIsResetMode(false)}>
+            <button
+              className="connexion-form-button"
+              type="button"
+              onClick={() => setIsResetMode(false)}
+            >
               Back to connexion
             </button>
           </>
         )}
-        <button type="button" onClick={() => navigate("/account/")}>
+
+        <button
+          className="connexion-form-button"
+          type="button"
+          onClick={() => navigate("/account/")}
+        >
           Back to account
         </button>
       </div>

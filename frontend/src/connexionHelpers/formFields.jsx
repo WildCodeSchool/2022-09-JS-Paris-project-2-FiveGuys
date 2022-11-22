@@ -15,7 +15,7 @@ const FormFields = {
     value: false,
     isValid: false,
     errorMsg:
-      "Your passworsd should have between 3 and 25 characters, no accents and no special characters",
+      "Incorrect password format (3 and 25 characters, no special characters)",
     isRequired: true,
     displayMsg: "",
     regexToTest: /^[a-zA-Z0-9]{3,25}$/,
@@ -48,8 +48,7 @@ const FormFields = {
   surname: {
     value: false,
     isValid: false,
-    errorMsg:
-      "Your surname should not have digits, accents or special characters",
+    errorMsg: "Your surname should not have digits or special characters",
     isRequired: true,
     displayMsg: "",
     regexToTest: /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/,
@@ -60,7 +59,7 @@ const FormFields = {
   phone: {
     value: false,
     isValid: false,
-    errorMsg: "Your phone number should have only digits",
+    errorMsg: "Your phone number should only have digits",
     isRequired: false,
     displayMsg: "",
     regexToTest: /^[0-9 ]+$/,
@@ -84,7 +83,7 @@ const FormFields = {
     value: false,
     isValid: false,
     errorMsg:
-      "Comment should not contain forbidden characters and should have more than 3 characters",
+      "Comments should not contain forbidden characters and should have more than 3 characters",
     isRequired: false,
     displayMsg: "",
     regexToTest: /^[A-Za-zÀ-ÖØ-öø-ÿ0-9!’@…©®™:$%'^&\-'")(+=,;._-\s]{3,2000}$/,

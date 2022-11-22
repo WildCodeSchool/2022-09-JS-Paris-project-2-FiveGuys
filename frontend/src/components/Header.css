@@ -108,6 +108,8 @@
   box-shadow: var(--box-shadow);
 }
 
+/**************************** MOBILE ***********************************************/
+
 @media screen and (max-width: 414px) {
   .header,
   .burger {
