@@ -1,0 +1,17 @@
+#comment-container div {
+  background: blue;
+  width: 80%;
+  display: flex;
+  height: 4rem;
+}
+
+.comment-area {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  height: 4rem;
+}

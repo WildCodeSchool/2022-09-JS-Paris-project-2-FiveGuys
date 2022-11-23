@@ -1,0 +1,118 @@
+.page.comments {
+  display: flex;
+  flex-direction: column;
+  color: var(--light-color);
+}
+
+.login {
+  padding: 8px;
+  margin-top: 2%;
+  font-family: var(--text-font);
+  border-radius: var(--border-radius);
+  background-color: var(--light-color);
+  width: 120%;
+}
+
+#text {
+  padding-bottom: 1.5%;
+  font-size: 1.2rem;
+}
+
+.dropbtn {
+  border: solid 3px var(--primary-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 160%;
+  height: 2.5rem;
+  background: none;
+  color: var(--light-color);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--light-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: var(--border-radius);
+}
+
+.dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+#dropdown {
+  width: 80%;
+  margin: auto;
+}
+
+#comment-container {
+  width: 100%;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.comment-scroll {
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 414px) {
+  .page.comments {
+    padding: 2%;
+  }
+
+  #comment-container {
+    margin: 4%;
+  }
+
+  #text {
+    text-align: center;
+    margin-bottom: 3%;
+  }
+
+  #dropdown {
+    margin: 0;
+    width: 100%;
+    padding-left: 7%;
+  }
+
+  .comment {
+    margin: 0;
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  .comment-scroll {
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}

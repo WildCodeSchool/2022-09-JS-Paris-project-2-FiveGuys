@@ -1,0 +1,61 @@
+.page-connexion {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  height: 80%;
+  width: 50%;
+  /* background-color: red; */
+  color: var(--light-color);
+  padding-bottom: 1%;
+  display: flex;
+  outline: 3px solid;
+  outline-color: var(--primary-color);
+  background-color: rgba(128, 128, 128, 0.85);
+  border-radius: var(--border-radius);
+  position: absolute;
+}
+
+.formtext-Input-area {
+  /*   background-color: yellow;
+ */
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/*** Labels inside label area (email and password) ***/
+.formtext-Input-area label {
+  padding-right: 0;
+  width: 100%;
+}
+
+.formtext-Input-area h3 {
+  font-size: 1rem;
+  color: var(--light-color);
+  /*   background-color: red;
+ */
+}
+
+.formtext-Input-area input {
+  width: 70%;
+  border-radius: var(--border-radius);
+}
+
+/*** Labels div for email and password ***/
+.label-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 120%;
+}
+
+.signup-button {
+  padding: 8px;
+  margin-top: 2%;
+  font-family: var(--text-font);
+  border-radius: var(--border-radius);
+  background-color: var(--light-color);
+  width: 20%;
+}
