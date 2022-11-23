@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import Title from "../components/Title";
 import "../components/Page.css";
 import "./Confirmation.css";
-import CrossIcon from "../components/CrossIcon";
 
 function Confirmation() {
   const navigate = useNavigate();

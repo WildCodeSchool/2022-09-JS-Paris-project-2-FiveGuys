@@ -7,6 +7,7 @@ import FormSubmitter from "../connexionHelpers/formSubmitter";
 import "./Connexion.css";
 import ConnexionEditMode from "./ConnexionEditMode";
 import ConnexionInit from "./ConnexionInit";
+import CrossIcon from "../components/CrossIcon";
 
 function Connexion() {
   const navigate = useNavigate();

@@ -5,7 +5,6 @@ import ConnexionContext from "../contexts/connexionContext";
 import { db } from "../firebase-config";
 import CommentArea from "../components/CommentArea";
 import Title from "../components/Title";
-import UserComment from "../components/UserComment";
 import "./Comments.css";
 
 function Comments() {
