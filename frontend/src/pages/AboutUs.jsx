@@ -4,6 +4,32 @@ import CrossIcon from "../components/CrossIcon";
 import Title from "../components/Title";
 
 function AboutUs() {
+  const guys = ["Celia", "Cassandra", "Quentin", "Jordann", "Francois"];
+  const stories = [
+    "I come from Toulouse, a small city on planet Earth in a galaxy far far away. I did international business before discovering that I  was a Jedi. Since then, I specialised in programming with ReactJs,  a light side form of the force. My hobby? Fixing and updating  droids features.",
+    "Once a brave and adventurous jedi during numerous battles for the rebels, I am now retired. Putting my powers aside, I help The Alliance by coding new websites and softwares for light sabers and communication to help the citizens navigate through their new Republic.",
+    "Former fermented food smuggler within the French Galactic Republic, located in Paris, I decided to change my path to become a web developer, but not for the republic, for the rebellion, in order to establish a code that will allow peace in the galaxy.",
+    "Former fermented food smuggler within the French Galactic Republic, located in Paris, I decided to change my path to become a web developer, but not for the republic, for the rebellion, in order to establish a code that will allow peace in the galaxy.",
+    "After 10 years working in the mobile game industry, I decided to devote myself to the rebel cause and became a web developper. I started to code my own X-wing, it does not work yet but I assure you that one day it will beat the Accuser or at least one of its engine.",
+  ];
+
+  const getImgSrc = (index) => {
+    switch (index) {
+      case 0:
+        return "../../public/crew-photos/celioche.jpg";
+      case 1:
+        return "../../public/crew-photos/lamenace.jpg";
+      case 2:
+        return "../../public/crew-photos/couennetine.jpg";
+      case 3:
+        return "../../public/crew-photos/franssoue.jpg";
+      case 4:
+        return "../../public/crew-photos/joledeglingo.jpg";
+      default:
+        return undefined;
+    }
+  };
+
   return (
     <div className="page-container aboutUs-container">
       <div className="page aboutUs-global">
@@ -12,12 +38,32 @@ function AboutUs() {
           <Title>About Us</Title>
         </div>
         <div className="us-container">
-          <div className="Just-the-five-of-us">
+          {guys.map((guy, index) => (
+            <div className="fr-person">
+              <img src={getImgSrc(index)} alt="profile" />
+
+              <p>{stories[index]}</p>
+              <a
+                className="linkedin-link"
+                href="https://www.linkedin.com/in/celia-rebonato/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="fr-linkedin-button"
+                  alt="linkedin"
+                  src="../../public/crew-photos/linkedinentier.png"
+                />
+              </a>
+            </div>
+          ))}
+          {/* <div className="Just-the-five-of-us">
             <img
+              id="celioche"
               className="person-picture"
               src="../../public/crew-photos/celioche.jpg"
               alt="Celiochebaloche"
-              width="90%"
+              // width="90%"
             />
             <p>
               I come from Toulouse, a small city on planet Earth in a galaxy far
@@ -36,16 +82,17 @@ function AboutUs() {
                 className="linkedin-button"
                 alt="linkedin"
                 src="../../public/crew-photos/linkedinentier.png"
-                width="20%"
+                // width="20%"
               />
             </a>
           </div>
           <div className="Just-the-five-of-us">
             <img
+              id="quentin"
               className="person-picture"
               src="../../public/crew-photos/couennetine.jpg"
               alt="Couennetine"
-              width="90%"
+              // width="90%"
             />
             <p>
               Former fermented food smuggler within the French Galactic
@@ -63,7 +110,7 @@ function AboutUs() {
                 className="linkedin-button"
                 alt="linkedin"
                 src="../../public/crew-photos/linkedinentier.png"
-                width="20%"
+                // width="20%"
               />
             </a>
           </div>
@@ -72,7 +119,7 @@ function AboutUs() {
               className="person-picture"
               src="../../public/crew-photos/lamenace.jpg"
               alt="Couennetine"
-              width="90%"
+              // width="90%"
             />
             <p>
               Once a brave and adventurous jedi during numerous battles for the
@@ -90,7 +137,7 @@ function AboutUs() {
                 className="linkedin-button"
                 alt="linkedin"
                 src="../../public/crew-photos/linkedinentier.png"
-                width="20%"
+                // width="20%"
               />
             </a>
           </div>
@@ -99,7 +146,7 @@ function AboutUs() {
               className="person-picture"
               src="../../public/crew-photos/franssoue.jpg"
               alt="Couennetine"
-              width="90%"
+              // width="90%"
             />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -117,7 +164,7 @@ function AboutUs() {
                 className="linkedin-button"
                 alt="linkedin"
                 src="../../public/crew-photos/linkedinentier.png"
-                width="20%"
+                // width="20%"
               />
             </a>
           </div>
@@ -126,7 +173,7 @@ function AboutUs() {
               className="person-picture"
               src="../../public/crew-photos/joledeglingo.jpg"
               alt="Couennetine"
-              width="90%"
+              // width="90%"
             />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -144,10 +191,10 @@ function AboutUs() {
                 className="linkedin-button"
                 alt="linkedin"
                 src="../../public/crew-photos/linkedinentier.png"
-                width="20%"
+                // width="20%"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

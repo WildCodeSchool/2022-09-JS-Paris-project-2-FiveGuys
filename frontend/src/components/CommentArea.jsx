@@ -47,7 +47,7 @@ function CommentArea({ id, user, planet, setComments }) {
   return (
     <div className="comment-area">
       <label htmlFor={fieldsToCheck.name}>{fieldsToCheck.label} : </label>
-      <div>
+      <div className="textarea-container">
         <textarea
           placeholder="type your comment"
           id={fieldsToCheck.name}

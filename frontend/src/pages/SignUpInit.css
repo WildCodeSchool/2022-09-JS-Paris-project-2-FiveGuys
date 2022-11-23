@@ -1,0 +1,27 @@
+.signUpInit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding-top: 5%;
+  width: 100%;
+}
+.signUpInit-container h3 {
+  color: var(--light-color);
+}
+
+.signUpInit-container button {
+  border: solid 3px var(--primary-color);
+  border-radius: 20px;
+  background: none;
+  font-family: var(--text-font);
+  color: var(--light-color);
+  padding: 5%;
+  width: 100%;
+}
+
+.signUpInit-button-container {
+  width: 10rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}

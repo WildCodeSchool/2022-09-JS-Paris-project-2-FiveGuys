@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60%;
+  height: 80%;
   width: 60%;
   /* background-color: red; */
 }
@@ -33,8 +33,6 @@
 .formtext-Input-area h3 {
   font-size: 1.4rem;
   color: var(--light-color);
-  /*   background-color: red;
- */
 }
 
 .formtext-Input-area input {
@@ -80,6 +78,7 @@
 #required {
   font-size: 0.8rem;
   padding-bottom: 2%;
+  color: var(--light-color);
 }
 
 /****** password forgotten message **************/
@@ -100,7 +99,6 @@
   padding: 8px;
   margin-top: 2%;
   font-family: var(--text-font);
-  border-radius: var(--border-radius);
-  background-color: var(--light-color);
+  background-color: none;
   width: 30%;
 }

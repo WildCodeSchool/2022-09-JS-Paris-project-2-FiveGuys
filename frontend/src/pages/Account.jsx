@@ -7,6 +7,7 @@ import FormFields from "../connexionHelpers/formFields";
 import FormTextInputList from "../components/FormTextInputList";
 import FormHelpers from "../connexionHelpers/formHelpers";
 import AccountHOC from "./AccountHOC";
+import CrossIcon from "../components/CrossIcon";
 
 function Account() {
   const navigate = useNavigate();
@@ -42,41 +43,45 @@ function Account() {
   }, [auth]);
 
   return (
-    <div className="page">
-      <AccountHOC
-        userInfo={userInfo}
-        auth={auth}
-        handleLogout={handleLogout}
-        handleDeleteAccount={handleDeleteAccount}
-      />
-      {params["*"] === "accountData/" && (
-        <>
-          <FormTextInputList
-            fields={fieldsToCheck}
-            data={signInData}
-            setData={setSignInData}
-            isEditMode
-          />
-          <button
-            disabled={
-              !FormHelpers.allowModifications(fieldsToCheck, userInfo.info)
-            }
-            type="button"
-            onClick={() =>
-              FormSubmitter.updateUserData(
-                auth.currentUser.uid,
-                FormHelpers.getModifiedFields(fieldsToCheck),
-                navigate
-              )
-            }
-          >
-            Save changes
-          </button>
-          <button type="button" onClick={() => navigate("/account")}>
-            Cancel
-          </button>
-        </>
-      )}
+    <div className="page-container">
+      <div className="page page-accountHOC">
+        <CrossIcon />
+        <AccountHOC
+          userInfo={userInfo}
+          auth={auth}
+          handleLogout={handleLogout}
+          handleDeleteAccount={handleDeleteAccount}
+          params={params}
+        />
+        {params["*"] === "accountData/" && (
+          <>
+            <FormTextInputList
+              fields={fieldsToCheck}
+              data={signInData}
+              setData={setSignInData}
+              isEditMode
+            />
+            <button
+              disabled={
+                !FormHelpers.allowModifications(fieldsToCheck, userInfo.info)
+              }
+              type="button"
+              onClick={() =>
+                FormSubmitter.updateUserData(
+                  auth.currentUser.uid,
+                  FormHelpers.getModifiedFields(fieldsToCheck),
+                  navigate
+                )
+              }
+            >
+              Save changes
+            </button>
+            <button type="button" onClick={() => navigate("/account")}>
+              Cancel
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }

@@ -2,11 +2,18 @@ import React from "react";
 import AccountInit from "./AccountInit";
 import AccountLoading from "./AccountLoading";
 import SignUpInit from "./SignUpInit";
+import "./AccountHOC.css";
 
-function AccountHOC({ userInfo, auth, handleLogout, handleDeleteAccount }) {
+function AccountHOC({
+  userInfo,
+  auth,
+  handleLogout,
+  handleDeleteAccount,
+  params,
+}) {
   return (
-    <>
-      {userInfo.info.surname && auth.currentUser && (
+    <div className="page-accountHOC">
+      {userInfo.info.surname && auth.currentUser && !params["*"] && (
         <AccountInit
           userInfo={userInfo}
           handleLogout={handleLogout}
@@ -14,8 +21,10 @@ function AccountHOC({ userInfo, auth, handleLogout, handleDeleteAccount }) {
         />
       )}
       {!userInfo.info.surname && auth.currentUser && <AccountLoading />}
-      {!userInfo.info.surname && !auth.currentUser && <SignUpInit />}
-    </>
+      {!userInfo.info.surname && !auth.currentUser && !params["*"] && (
+        <SignUpInit />
+      )}
+    </div>
   );
 }
 

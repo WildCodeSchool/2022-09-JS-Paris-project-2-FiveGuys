@@ -29,9 +29,9 @@ function ConnexionInit({
       >
         Log in
       </button>
-      <i className="password-forgotten">password forgotten ?</i>
+      <i className="password-forgotten">Password forgotten ?</i>
       <button type="button" onClick={() => setIsResetMode(true)}>
-        Reinit password
+        Reset password
       </button>
     </>
   );

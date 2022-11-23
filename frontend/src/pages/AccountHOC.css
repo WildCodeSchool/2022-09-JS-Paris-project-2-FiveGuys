@@ -1,0 +1,10 @@
+.page-accountHOC button {
+  border-radius: 20px;
+  border: solid 3px var(--primary-color);
+  font-family: var(--text-font);
+  color: var(--light-color);
+  background: none;
+  cursor: pointer;
+  padding: 1%;
+  margin: 1.5%;
+}

@@ -13,14 +13,16 @@ function PlanetCardRight() {
       <div id="container-text-right">
         <p className="text-right">{planets[planet].text}</p>
       </div>
-      <Link to={`/planets/${planet}/info`}>
-        <button className="right-button" type="button">
-          Would like to know more ?
-        </button>
-      </Link>
-      <Link to={`/planets/${planet}/comments`}>
-        <button type="button">comments</button>
-      </Link>
+      <div className="planet-card-right-buttons-container">
+        <Link to={`/planets/${planet}/info`}>
+          <button className="right-button" type="button">
+            Would like to know more ?
+          </button>
+        </Link>
+        <Link to={`/planets/${planet}/comments`}>
+          <button type="button">Comments</button>
+        </Link>
+      </div>
     </div>
   );
 }

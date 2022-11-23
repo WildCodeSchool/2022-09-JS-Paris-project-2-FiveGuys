@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Title from "../components/Title";
 import "../components/Page.css";
 import "./Confirmation.css";
+import CrossIcon from "../components/CrossIcon";
 
 function Confirmation() {
   const navigate = useNavigate();
@@ -20,12 +21,15 @@ function Confirmation() {
   };
 
   return (
-    <div className="page">
-      <Title>{action}</Title>
-      <h2>{confirmationSentence(action)}</h2>
-      <button type="button" onClick={() => navigate("/account/")}>
-        Back to account
-      </button>
+    <div className="page-container confirmation">
+      <div className="page confirmation">
+        <CrossIcon />
+        <Title>{action}</Title>
+        <h2>{confirmationSentence(action)}</h2>
+        <button type="button" onClick={() => navigate("/account/")}>
+          Back to account
+        </button>
+      </div>
     </div>
   );
 }

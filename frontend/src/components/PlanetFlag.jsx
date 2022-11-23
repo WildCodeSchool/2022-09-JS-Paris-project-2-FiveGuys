@@ -10,6 +10,7 @@ export default function PlanetFlag({ faction }) {
         src={weatherIcon(faction, "flags")}
         alt={faction}
       />
+
       <figcaption>
         Authority in place:<p>{faction}</p>
       </figcaption>

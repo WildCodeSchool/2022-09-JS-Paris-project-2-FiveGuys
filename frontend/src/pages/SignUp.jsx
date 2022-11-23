@@ -56,7 +56,7 @@ function SignIn() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container SignUp">
       <div className="page-connexion">
         <CrossIcon />
         <Title>Sign up</Title>

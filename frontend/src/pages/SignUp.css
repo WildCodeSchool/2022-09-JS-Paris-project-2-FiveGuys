@@ -56,6 +56,6 @@
   margin-top: 2%;
   font-family: var(--text-font);
   border-radius: var(--border-radius);
-  background-color: var(--light-color);
+  background-color: none;
   width: 20%;
 }
