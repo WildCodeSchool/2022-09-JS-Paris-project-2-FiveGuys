@@ -1,7 +1,5 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState } from "react";
 import "./CommentArea.css";
-
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../firebase-config";
 import FormFields from "../connexionHelpers/formFields";
@@ -34,10 +32,21 @@ function CommentArea({ id, user, planet, setComments }) {
     setComments((old) => [...old, newComment]);
   };
 
+  const displayValidation = () => {
+    switch (true) {
+      case commentData[fieldsToCheck.name].isValid:
+        return " ✓";
+      case !commentData[fieldsToCheck.name].isValid &&
+        commentData[fieldsToCheck.name].value:
+        return " ✕";
+      default:
+        return undefined;
+    }
+  };
+
   return (
-    <>
+    <div className="comment-area">
       <label htmlFor={fieldsToCheck.name}>{fieldsToCheck.label} : </label>
-      <br />
       <div>
         <textarea
           placeholder="type your comment"
@@ -51,22 +60,13 @@ function CommentArea({ id, user, planet, setComments }) {
             FormHelpers.handleChange(e, commentData, setComment, false)
           }
         />
-        <span className="spanValidation">
-          {commentData[fieldsToCheck.name].isValid
-            ? " ✓"
-            : !commentData[fieldsToCheck.name].isValid &&
-              commentData[fieldsToCheck.name].value
-            ? "✕"
-            : ""}
-        </span>
-        <br />
+        <span className="spanValidation">{displayValidation()}</span>
       </div>
       <div id="comment-controler">
         <span className="spanDisplayMsg">
           {commentData[fieldsToCheck.name].touched &&
             commentData[fieldsToCheck.name].displayMsg}
         </span>
-        <br />
       </div>
       <button
         disabled={!commentData.commentArea.isValid}
@@ -75,7 +75,7 @@ function CommentArea({ id, user, planet, setComments }) {
       >
         Send
       </button>
-    </>
+    </div>
   );
 }
 

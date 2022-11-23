@@ -30,11 +30,9 @@ function Calendar({ setCurrentDay, currentDay }) {
           .map((day, index) => {
             return (
               <button
-                className={
-                  currentDay === index
-                    ? "benjamin-button active"
-                    : "benjamin-button"
-                }
+                className={`benjamin-button ${
+                  currentDay === index && "active"
+                }`}
                 onClick={() => setCurrentDay(index)}
                 type="button"
                 key={day}

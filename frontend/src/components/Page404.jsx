@@ -17,7 +17,6 @@ export default function Page404() {
             You are not authorized by the Galactic Empire to access those pieces
             of information.
           </h3>
-          {/* <p>Never underestimate the power of the Dark Side</p> */}
           <img src={Empire} alt="Empire Flag" />
         </div>
       </div>

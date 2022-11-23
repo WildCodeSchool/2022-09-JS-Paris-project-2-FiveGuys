@@ -1,8 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable no-unused-vars */
-/* eslint-disable consistent-return */
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../components/Title";
@@ -37,14 +32,26 @@ function SignIn() {
     password,
     passwordConfirmation,
   });
-  const [_, ...fieldsToCheck] = Object.values(signInData);
+  const fieldsToCheck = Object.values(signInData).slice(1);
 
   const isFormValid = () => {
-    if (
+    return (
       FormHelpers.allowValidation(fieldsToCheck, signInData.gender) &&
-      signInData.password.value === signInData.passwordConfirmation.value
-    ) {
-      return true;
+      signInData.password.value === signInData.passwordConfirmation.value &&
+      true
+    );
+  };
+
+  const displayGender = (chosen) => {
+    switch (chosen) {
+      case !chosen:
+        return "Select";
+      case 1:
+        return "Mr";
+      case 2:
+        return "Mrs";
+      default:
+        return undefined;
     }
   };
 
@@ -53,26 +60,19 @@ function SignIn() {
       <div className="page-connexion">
         <CrossIcon />
         <Title>Sign up</Title>
-
         <label htmlFor="civ">Gender * :</label>
-        <br />
         <div className="dropdown">
-          {!signInData.gender
-            ? "Select : "
-            : signInData.gender === 1
-            ? "Mr"
-            : signInData.gender === 2
-            ? "Mrs"
-            : ""}
+          {displayGender(signInData.gender)}
           <div className="dropdown-content">
             {["Male", "Female", "Other"].map((gend, index) => (
-              <p
-                onClick={(e) =>
+              <button
+                type="button"
+                onClick={() =>
                   FormHelpers.assignGender(index + 1, setSignInData, signInData)
                 }
               >
                 {gend}
-              </p>
+              </button>
             ))}
           </div>
         </div>
@@ -84,7 +84,6 @@ function SignIn() {
           isEditMode={false}
         />
         <i>* required</i>
-        <br />
         <button
           className="signup-button"
           type="button"

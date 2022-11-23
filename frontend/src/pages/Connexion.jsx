@@ -1,15 +1,12 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../components/Title";
 import ConnexionContext from "../contexts/connexionContext";
 import FormFields from "../connexionHelpers/formFields";
 import FormSubmitter from "../connexionHelpers/formSubmitter";
-import FormHelpers from "../connexionHelpers/formHelpers";
-import FormTextInputList from "../components/FormTextInputList";
 import "./Connexion.css";
-import "../components/Page.css";
-import CrossIcon from "../components/CrossIcon";
+import ConnexionEditMode from "./ConnexionEditMode";
+import ConnexionInit from "./ConnexionInit";
 
 function Connexion() {
   const navigate = useNavigate();
@@ -21,7 +18,7 @@ function Connexion() {
     mail,
     password,
   });
-  const [_, ...fieldsToCheck] = Object.values(connexionData);
+  const fieldsToCheck = Object.values(connexionData).slice(1);
 
   const onFormSubmit = async () => {
     await FormSubmitter.login(
@@ -48,67 +45,22 @@ function Connexion() {
         <CrossIcon />
         <Title>Connexion</Title>
         {!isResetMode ? (
-          <div className="connexion-form-text-input">
-            <FormTextInputList
-              fields={fieldsToCheck}
-              data={connexionData}
-              setData={setConnexionData}
-              isEditMode={false}
-            />
-            {/* <i id="required">* required</i> */}
-
-            <div className="spanDisplayMsg-area">
-              <span className="spanDisplayMsg">
-                {connexionData.connexionError}
-              </span>
-            </div>
-            <div className="connexion-form-buttons-container">
-              <button
-                className="connexion-form-button"
-                type="button"
-                onClick={() =>
-                  FormHelpers.allowValidation(fieldsToCheck, true) &&
-                  onFormSubmit()
-                }
-              >
-                Log in
-              </button>
-
-              <i className="password-forgotten">Password Forgotten ?</i>
-
-              <button
-                className="connexion-form-button"
-                type="button"
-                onClick={() => setIsResetMode(true)}
-              >
-                Reset password
-              </button>
-            </div>
-          </div>
+          <ConnexionInit
+            fieldsToCheck={fieldsToCheck}
+            connexionData={connexionData}
+            setConnexionData={setConnexionData}
+            onFormSubmit={onFormSubmit}
+            setIsResetMode={setIsResetMode}
+          />
         ) : (
-          <>
-            <FormTextInputList
-              fields={[fieldsToCheck[0]]}
-              data={connexionData}
-              setData={setConnexionData}
-              isEditMode={false}
-            />
-
-            <button
-              className="connexion-form-button"
-              type="button"
-              onClick={() => handleReinitPassword()}
-            >
-              Reset password
-            </button>
-            <button
-              className="connexion-form-button"
-              type="button"
-              onClick={() => setIsResetMode(false)}
-            >
-              Back to connexion
-            </button>
-          </>
+          <ConnexionEditMode
+            fieldsToCheck={fieldsToCheck}
+            connexionData={connexionData}
+            setConnexionData={setConnexionData}
+            onFormSubmit={onFormSubmit}
+            setIsResetMode={setIsResetMode}
+            handleReinitPassword={handleReinitPassword}
+          />
         )}
 
         <button

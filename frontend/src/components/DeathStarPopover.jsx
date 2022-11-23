@@ -16,7 +16,7 @@ export default function DeathStarPopover() {
         </p>
       </div>
       <img src={Empire} alt="Empire Flag" />
-      <p> Unauthorized</p>
+      <p>Unauthorized</p>
     </div>
   );
 }

@@ -16,7 +16,6 @@ function PlanetPeople({ people }) {
       }),
     [people]
   );
-  /* console.log(famousPeople); */
   return (
     <div className="planet-info-right-people-pics">
       {famousPeople.slice(0, 2).map((peep) => (

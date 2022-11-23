@@ -2,10 +2,6 @@ import React from "react";
 import "./Planet.css";
 import "./PlanetPopover.css";
 import { Link } from "react-router-dom";
-// import { StyledEngineProvider } from "@mui/material";
-// import Weathername from "../services/WeatherName";
-// import Timezone from "../services/Timezone";
-// import weatherIcon from "../services/weatherIcon";
 import PlanetPopover from "./PlanetPopover";
 
 function Planet({ size, name, pic, bgsize, initial, timezone }) {

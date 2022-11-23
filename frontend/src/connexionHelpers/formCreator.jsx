@@ -15,9 +15,6 @@ const FormCreator = {
     const userDoc = doc(db, "users", id);
     await deleteDoc(userDoc);
   },
-  deleteUser: async (auth) => {
-    console.warn(auth);
-  },
   createUser: async (id, data) => {
     await setDoc(doc(db, "users", id), {
       gender: data.gender,

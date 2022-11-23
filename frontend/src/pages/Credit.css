@@ -16,6 +16,10 @@
   text-align: justify;
 }
 
+#credit-paragraph {
+  margin-bottom: 6rem;
+}
+
 .crawl {
   position: relative;
   transform-origin: 50% 100%;
