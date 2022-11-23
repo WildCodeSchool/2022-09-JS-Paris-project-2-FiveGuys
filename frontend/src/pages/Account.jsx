@@ -84,7 +84,7 @@ function Account() {
           </>
         ) : (
           <>
-            <Title>Sign up</Title>
+            <Title>Sign In</Title>
             <div className="account-signup-container">
               <h3>Log in</h3>
               <Link to="connexion">

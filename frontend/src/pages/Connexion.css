@@ -1,6 +1,10 @@
 .page.connexion {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 60%;
+  width: 60%;
+  /* background-color: red; */
 }
 
 /****** Div containing all elements of the page **************/
@@ -54,6 +58,7 @@
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  color: var(--light-color);
 }
 
 /** cross or check **/
@@ -81,6 +86,7 @@
 .password-forgotten {
   padding-top: 2%;
   padding-bottom: 1%;
+  color: var(--light-color);
 }
 
 .connexion-form-buttons-container {

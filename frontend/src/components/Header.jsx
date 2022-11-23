@@ -26,7 +26,7 @@ function Header() {
       <div className="header-list">
         <li id="signup-button">
           <Link to="/account">
-            {Object.keys(userInfo.info).length === 0 ? "Sign Up" : `My account`}
+            {Object.keys(userInfo.info).length === 0 ? "Sign In" : `My account`}
           </Link>
         </li>
       </div>

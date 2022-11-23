@@ -20,10 +20,11 @@ function AboutUs() {
               width="90%"
             />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              I come from Toulouse, a small city on planet Earth in a galaxy far
+              far away. I did international business before discovering that I
+              was a Jedi. Since then, I specialised in programming with ReactJs,
+              a light side form of the force. My hobby? Fixing and updating
+              droids features.
             </p>
             <a
               className="linkedin-link"
@@ -47,10 +48,10 @@ function AboutUs() {
               width="90%"
             />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Former fermented food smuggler within the French Galactic
+              Republic, located in Paris, I decided to change my path to become
+              a web developer, but not for the republic, for the rebellion, in
+              order to establish a code that will allow peace in the galaxy.
             </p>
             <a
               className="linkedin-link"
@@ -74,10 +75,10 @@ function AboutUs() {
               width="90%"
             />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Once a brave and adventurous jedi during numerous battles for the
+              rebels, I am now retired. Putting my powers aside, I help The
+              Alliance by coding new websites and softwares to help the citizens
+              navigate through their new Republic.
             </p>
             <a
               className="linkedin-link"

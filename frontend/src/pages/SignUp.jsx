@@ -12,7 +12,6 @@ import FormFields from "../connexionHelpers/formFields";
 import FormTextInputList from "../components/FormTextInputList";
 import FormSubmitter from "../connexionHelpers/formSubmitter";
 import CrossIcon from "../components/CrossIcon";
-import "../components/Page.css";
 import "./SignUp.css";
 
 function SignIn() {
@@ -51,7 +50,7 @@ function SignIn() {
 
   return (
     <div className="page-container">
-      <div className="page connexion">
+      <div className="page-connexion">
         <CrossIcon />
         <Title>Sign up</Title>
 
@@ -87,6 +86,7 @@ function SignIn() {
         <i>* required</i>
         <br />
         <button
+          className="signup-button"
           type="button"
           onClick={() =>
             isFormValid() &&

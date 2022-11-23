@@ -51,44 +51,50 @@ function Comments() {
   }, []);
 
   return (
-    <div className="page">
-      <Title>Comments on {planet}</Title>
-      <div id="comment-container">
-        {!userInfo.auth.currentUser ? (
-          <>
-            <p>You have to be online to post comments</p>
-            <Link to="/account/connexion">
-              <button type="button">Log in</button>
-            </Link>
-          </>
-        ) : (
-          <CommentArea
-            id={userInfo.auth.currentUser.uid}
-            user={userInfo.info}
-            planet={planet}
-            setComments={setComments}
-          />
-        )}
-      </div>
-      <div id="dropdown">
-        <div className="dropdown">
-          <button type="button" className="dropbtn">
-            Filter
-          </button>
-          <ul className="dropdown-content">
-            <li onClick={() => reverseCommentsOrder()}>
-              filter {isAsc.current ? "ascending" : "descending"}
-            </li>
-            {userInfo.auth.currentUser && (
-              <li onClick={() => userCommentsOnly()}>
-                {!isUserOnly.current ? "all" : "my comments"}
+    <div className="page-container">
+      <div className="page comments">
+        <Title>Comments on {planet}</Title>
+        <div id="comment-container">
+          {!userInfo.auth.currentUser ? (
+            <>
+              <p id="text">You have to be online to post comments</p>
+              <Link to="/account/connexion">
+                <button className="login" type="button">
+                  Log in
+                </button>
+              </Link>
+            </>
+          ) : (
+            <CommentArea
+              id={userInfo.auth.currentUser.uid}
+              user={userInfo.info}
+              planet={planet}
+              setComments={setComments}
+            />
+          )}
+        </div>
+        <div id="dropdown">
+          <div className="dropdown">
+            <button type="button" className="dropbtn">
+              Filter
+            </button>
+            <ul className="dropdown-content">
+              <li onClick={() => reverseCommentsOrder()}>
+                filter {isAsc.current ? "ascending" : "descending"}
               </li>
-            )}
-          </ul>
+              {userInfo.auth.currentUser && (
+                <li onClick={() => userCommentsOnly()}>
+                  {!isUserOnly.current ? "all" : "my comments"}
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+        <div className="comment-scroll">
+          {comments &&
+            comments.map((comment) => <UserComment commentData={comment} />)}
         </div>
       </div>
-      {comments &&
-        comments.map((comment) => <UserComment commentData={comment} />)}
     </div>
   );
 }

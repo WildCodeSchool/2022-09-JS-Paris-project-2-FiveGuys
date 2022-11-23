@@ -13,8 +13,7 @@ function FormTextInput({ data, setData, field, isEditMode }) {
         <label htmlFor={field.name}>
           <h3>
             {" "}
-            {field.label} :{" "}
-            {!data[field.name].isRequired && <i>- optional -</i>}
+            {field.label} : {!data[field.name].isRequired && <i>optional</i>}
           </h3>
         </label>
 
