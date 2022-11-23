@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable default-case */
 import {
   createUserWithEmailAndPassword,
   signOut,
@@ -82,6 +80,8 @@ const FormSubmitter = {
         return "Incorrect password";
       case "Firebase: Error (auth/user-not-found).":
         return "Unknown email";
+      default:
+        return undefined;
     }
   },
 };

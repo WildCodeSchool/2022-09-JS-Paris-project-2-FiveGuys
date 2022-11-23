@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 const FormHelpers = {
   handleBlur: (event, data, setData, isEditMode) => {
     const fieldName = event.target.name;
@@ -43,30 +42,20 @@ const FormHelpers = {
     }
     setData({ ...data, [fieldName]: newField });
   },
-  checkRequired: (fieldsToCheck) => {
-    if (
-      fieldsToCheck.filter((key) => key.isRequired).every((val) => val.isValid)
-    ) {
-      return true;
-    }
-  },
-  checkNotRequired: (fieldsToCheck) => {
-    if (
-      fieldsToCheck
-        .filter((key) => !key.isRequired)
-        .every((val) => !val.value || (val.value && val.isValid))
-    ) {
-      return true;
-    }
-  },
+  checkRequired: (fieldsToCheck) =>
+    fieldsToCheck.filter((key) => key.isRequired).every((val) => val.isValid),
+  checkNotRequired: (fieldsToCheck) =>
+    fieldsToCheck
+      .filter((key) => !key.isRequired)
+      .every((val) => !val.value || (val.value && val.isValid)),
+
   allowValidation: (fieldsToCheck, gender) => {
-    if (
+    return (
       FormHelpers.checkRequired(fieldsToCheck) &&
       FormHelpers.checkNotRequired(fieldsToCheck) &&
-      gender
-    ) {
-      return true;
-    }
+      gender &&
+      true
+    );
   },
   getModifiedFields: (fields) => {
     return fields.filter((field) => field.touched && field.value);

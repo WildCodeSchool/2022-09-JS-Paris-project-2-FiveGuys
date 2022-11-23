@@ -5,6 +5,11 @@
   height: 4rem;
 }
 
+.comment-area {
+  display: flex;
+  flex-direction: column;
+}
+
 textarea {
   width: 100%;
   resize: none;

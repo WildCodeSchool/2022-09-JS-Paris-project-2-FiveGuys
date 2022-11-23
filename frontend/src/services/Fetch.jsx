@@ -34,8 +34,8 @@ const fetchFunctions = {
       .then((res) => res.data);
   },
 
-  fetchResidents(URL) {
-    return axios.get(URL).then((res) => res.data);
+  fetchResidents(givenUrl) {
+    return axios.get(givenUrl).then((res) => res.data);
   },
 };
 

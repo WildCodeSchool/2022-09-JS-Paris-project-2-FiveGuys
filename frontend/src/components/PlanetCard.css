@@ -1,12 +1,8 @@
 /************************ LEFT PART *************************/
 
-.page {
+.page-planet-card {
   display: flex;
-  outline: 3px solid;
-  outline-color: var(--primary-color);
-  background-color: rgba(128, 128, 128, 0.85);
-  border-radius: var(--border-radius);
-  height: 80vh;
+  flex-direction: row;
   width: 85vw;
   position: absolute;
   -webkit-appearance: none;
@@ -23,15 +19,6 @@
   font-size: 3.6rem;
   text-align: center;
   font-family: var(--title-font);
-}
-
-.page-container {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 6rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .calendar-container {
@@ -52,6 +39,7 @@
   -webkit-appearance: none;
   border: none;
   border-radius: 11px;
+  font-family: var(--text-font);
 }
 
 .calendar-arrow {
@@ -121,6 +109,7 @@
   align-items: center;
   width: 50%;
   height: 100%;
+  justify-content: space-between;
 }
 
 .planet-card-right img {
@@ -136,6 +125,13 @@
 .planet-card-right button {
   padding: 8px;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.planet-card-right button:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  cursor: pointer;
 }
 
 #container-text-right {
@@ -156,6 +152,7 @@
 
 .text-right {
   height: 100%;
+  margin-top: 0.7rem;
 }
 
 .right-button {

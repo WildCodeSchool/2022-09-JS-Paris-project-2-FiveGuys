@@ -1,17 +1,8 @@
-.credits-global {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 6rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .credits-container {
   display: flex;
   outline: 3px solid;
   outline-color: var(--primary-color);
-  background-color: rgba(128, 128, 128, 0.85);
+  background-color: rgba(0, 0, 0, 0.63);
   border-radius: var(--border-radius);
   height: 80vh;
   width: 85vw;
@@ -23,6 +14,10 @@
   line-height: 200%;
   perspective: 300px;
   text-align: justify;
+}
+
+#credit-paragraph {
+  margin-bottom: 6rem;
 }
 
 .crawl {

@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
@@ -11,8 +9,7 @@ import UserComment from "../components/UserComment";
 import "./Comments.css";
 
 function Comments() {
-  // eslint-disable-next-line no-unused-vars
-  const { userInfo, _ } = useContext(ConnexionContext);
+  const { userInfo } = useContext(ConnexionContext);
   const { planet } = useParams();
   const [comments, setComments] = useState([]);
 
@@ -76,12 +73,16 @@ function Comments() {
             Filter
           </button>
           <ul className="dropdown-content">
-            <li onClick={() => reverseCommentsOrder()}>
-              filter {isAsc.current ? "ascending" : "descending"}
+            <li>
+              <button type="button" onClick={() => reverseCommentsOrder()}>
+                filter {isAsc.current ? "ascending" : "descending"}
+              </button>
             </li>
             {userInfo.auth.currentUser && (
-              <li onClick={() => userCommentsOnly()}>
-                {!isUserOnly.current ? "all" : "my comments"}
+              <li>
+                <button type="button" onClick={() => userCommentsOnly()}>
+                  {!isUserOnly.current ? "all" : "my comments"}
+                </button>
               </li>
             )}
           </ul>

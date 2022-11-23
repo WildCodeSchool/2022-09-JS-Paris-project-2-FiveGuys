@@ -1,11 +1,8 @@
 import React from "react";
 import "./Planet.css";
-import "./Popover.css";
+import "./PlanetPopover.css";
 import { Link } from "react-router-dom";
-import { Typography, Popover, StyledEngineProvider } from "@mui/material";
-import Weathername from "../services/WeatherName";
-import Timezone from "../services/Timezone";
-import weatherIcon from "../services/weatherIcon";
+import PlanetPopover from "./PlanetPopover";
 
 function Planet({ size, name, pic, bgsize, initial, timezone }) {
   const planetStyle = {
@@ -41,45 +38,15 @@ function Planet({ size, name, pic, bgsize, initial, timezone }) {
           aria-haspopup="true"
         />
       </Link>
-      <StyledEngineProvider injectFirst>
-        <Popover
-          id="planet-popover"
-          sx={{
-            pointerEvents: "none",
-          }}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleMouseLeave}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "right",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
-          disableRestoreFocus
-        >
-          <div className="popover-container">
-            <Typography>
-              <h2 className="popover-title"> {name} </h2>
-              <div className="popover-hour-time">
-                <p className="popover-temp">
-                  {initial && `${initial.temperature_2m_max[0]}`}°
-                </p>
-                <p className="popover-time">{Timezone(timezone)}</p>
-              </div>
-              <img
-                src={
-                  initial && weatherIcon(initial.weathercode[0], "meteo-icon")
-                }
-                alt="popoverPic"
-              />
-              <p> {Weathername(initial?.weathercode[0])}</p>
-            </Typography>
-          </div>
-        </Popover>
-      </StyledEngineProvider>
+
+      <PlanetPopover
+        anchorEl={anchorEl}
+        name={name}
+        initial={initial}
+        timezone={timezone}
+        open={open}
+        handleMouseLeave={() => handleMouseLeave()}
+      />
     </div>
   );
 }
