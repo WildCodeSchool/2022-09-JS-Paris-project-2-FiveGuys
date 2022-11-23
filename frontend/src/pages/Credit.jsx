@@ -25,11 +25,14 @@ function Credit() {
           </p>
           <p>Written and Directed by</p>
           <p>CELIOCHE</p>
-          <p>GEORGE LUCAS</p>
+          <p>FRANSSOUE</p>
+          <p>COUENNE-TINE</p>
+          <p>JO LE DEGLINDO</p>
+          <p>CASTOCHE</p>
           <p>Produced by</p>
-          <p>GARY KURTZ</p>
+          <p>FIVE GUYS</p>
           <p>Executive Producer</p>
-          <p> GEORGE LUCAS</p>
+          <p>FIVE GUYS</p>
           <p> Starring</p>
           <p> MARK HAMILL</p>
           <p> HARRISON FORD</p>

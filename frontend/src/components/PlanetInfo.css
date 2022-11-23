@@ -15,35 +15,47 @@
   border-radius: var(--border-radius);
   margin: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  max-height: 22vw;
+  max-height: 20vw;
 }
 
 .planet-info-left-bottom-container {
-  width: 100%;
+  /*   background-color: green; */
   display: flex;
   max-height: 30%;
-
-  justify-content: space-evenly;
+  margin-left: 5%;
 }
 .planet-info-left-bottom-container figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* border: solid red; */
 }
 
 .planet-info-left-bottom-container img {
-  height: 60%;
+  width: 40%;
+  /* border: blue solid; */
 }
 
+/* .planet-info-left-bottom-container-flag {
+  border-radius: solid red;
+} */
+
 .planet-info-left-bottom-container figcaption {
+  /*  border: solid violet; */
+  width: 40%;
   margin-top: 3%;
   font-size: 80%;
+  color: var(--light-color);
+  text-align: center;
 }
 
 .planet-info-left-bottom-container-info {
-  width: 60%;
+  color: var(--light-color);
+  width: 180%;
   display: flex;
   justify-content: space-around;
+  /* border: solid yellow; */
 }
 
 .planet-info-left-bottom-container-info ul {
@@ -51,10 +63,11 @@
   flex-direction: column;
   justify-content: center;
   line-height: 300%;
+  text-decoration: none;
 }
 
 .planet-info-left-bottom-container-info li {
-  list-style-image: url(../../public/icon-vader/Darth.png);
+  text-decoration: none;
 }
 
 /********************************************** RIGHT **********************************************/
@@ -65,6 +78,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  color: var(--light-color);
 }
 .planet-info-right figcaption {
   text-align: center;

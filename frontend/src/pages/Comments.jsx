@@ -6,6 +6,7 @@ import { db } from "../firebase-config";
 import CommentArea from "../components/CommentArea";
 import Title from "../components/Title";
 import "./Comments.css";
+import CrossIcon from "../components/CrossIcon";
 
 function Comments() {
   const { userInfo } = useContext(ConnexionContext);
@@ -47,44 +48,47 @@ function Comments() {
   }, []);
 
   return (
-    <div className="page">
-      <Title>Comments on {planet}</Title>
-      <div id="comment-container">
-        {!userInfo.auth.currentUser ? (
-          <>
-            <p>You have to be online to post comments</p>
-            <Link to="/account/connexion">
-              <button type="button">Log in</button>
-            </Link>
-          </>
-        ) : (
-          <CommentArea
-            id={userInfo.auth.currentUser.uid}
-            user={userInfo.info}
-            planet={planet}
-            setComments={setComments}
-          />
-        )}
-      </div>
-      <div id="dropdown">
-        <div className="dropdown">
-          <button type="button" className="dropbtn">
-            Filter
-          </button>
-          <ul className="dropdown-content">
-            <li>
-              <button type="button" onClick={() => reverseCommentsOrder()}>
-                filter {isAsc.current ? "ascending" : "descending"}
-              </button>
-            </li>
-            {userInfo.auth.currentUser && (
+    <div className="page-container comments">
+      <div className="page comments">
+        <CrossIcon />
+        <Title>Comments on {planet}</Title>
+        <div id="comment-container">
+          {!userInfo.auth.currentUser ? (
+            <>
+              <p>You have to be online to post comments</p>
+              <Link to="/account/connexion">
+                <button type="button">Log in</button>
+              </Link>
+            </>
+          ) : (
+            <CommentArea
+              id={userInfo.auth.currentUser.uid}
+              user={userInfo.info}
+              planet={planet}
+              setComments={setComments}
+            />
+          )}
+        </div>
+        <div id="dropdown">
+          <div className="dropdown">
+            <button type="button" className="dropbtn">
+              Filter
+            </button>
+            <ul className="dropdown-content">
               <li>
-                <button type="button" onClick={() => userCommentsOnly()}>
-                  {!isUserOnly.current ? "all" : "my comments"}
+                <button type="button" onClick={() => reverseCommentsOrder()}>
+                  filter {isAsc.current ? "ascending" : "descending"}
                 </button>
               </li>
-            )}
-          </ul>
+              {userInfo.auth.currentUser && (
+                <li>
+                  <button type="button" onClick={() => userCommentsOnly()}>
+                    {!isUserOnly.current ? "all" : "my comments"}
+                  </button>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

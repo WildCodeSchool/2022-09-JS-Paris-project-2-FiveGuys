@@ -1,23 +1,14 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useState } from "react";
 import { auth } from "../firebase-config";
 
 const ConnexionContext = createContext();
 
 export function ConnexionContextProvider({ children }) {
-  const [userInfo, setUserInfo] = useState({
-    auth,
-    info: {},
-  });
-  const userProfile = useMemo(
-    () => ({
-      userInfo,
-      setUserInfo,
-    }),
-    [userInfo, setUserInfo]
-  );
+  const [userInfo, setUserInfo] = useState({ auth, info: {} });
 
   return (
-    <ConnexionContext.Provider value={userProfile}>
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <ConnexionContext.Provider value={{ userInfo, setUserInfo }}>
       {children}
     </ConnexionContext.Provider>
   );

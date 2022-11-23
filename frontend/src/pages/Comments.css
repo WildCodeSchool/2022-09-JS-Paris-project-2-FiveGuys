@@ -68,16 +68,20 @@
 #dropdown {
   width: 80%;
   margin: auto;
+  margin-top: 0;
 }
 
 #comment-container {
   width: 100%;
-  /* background: red; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 1rem;
   padding-top: 1rem;
+}
+
+#comment-container button {
+  width: 10rem;
 }
 
 .comment-scroll {

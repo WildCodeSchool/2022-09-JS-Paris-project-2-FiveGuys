@@ -124,8 +124,8 @@
 
 .planet-card-right button {
   padding: 8px;
-  border-radius: 0.5rem;
   cursor: pointer;
+  width: 100%;
 }
 
 .planet-card-right button:hover {
@@ -155,9 +155,11 @@
   margin-top: 0.7rem;
 }
 
-.right-button {
-  margin-bottom: 20px;
-  border: none;
+.planet-card-right-buttons-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3%;
 }
 
 .right-button p {

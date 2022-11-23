@@ -57,6 +57,19 @@ body {
   height: calc(100vh - 10rem);
 }
 
+.page-accountHOC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.page-accountHOC.page {
+  width: 60%;
+  height: 60%;
+}
+
 @media screen and (max-width: 414px) {
   .total {
     width: 100%;
